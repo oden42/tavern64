@@ -20,9 +20,9 @@
 
 /* I2C Driver */
 #define OLED_DISPLAY_128X64
-#define I2C_DRIVER I2CD1							// Required for RP2040
-#define I2C1_SDA_PIN GP12 							// Required for RP2040
-#define I2C1_SCL_PIN GP13							// Required for RP2040
+#define I2C_DRIVER I2CD0							// Required for RP2040
+#define I2C0_SDA_PIN GP28 							// Required for RP2040
+#define I2C0_SCL_PIN GP29							// Required for RP2040
 
 
 /* OLED Options */
@@ -45,14 +45,14 @@
 // #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25
 
 /* Audio Options */
-#define AUDIO_PIN GP16
-#define AUDIO_PWM_DRIVER PWMD0 						// Required for RP2040
+#define AUDIO_PIN GP26
+#define AUDIO_PWM_DRIVER PWMD5 						// Required for RP2040
 #define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A 		// Required for RP2040
 #define AUDIO_INIT_DELAY
 #define AUDIO_CLICKY
 
 /* RGB Underglow Settings */
-#define RGB_DI_PIN GP24
+#define RGB_DI_PIN GP27
 #define RGBLED_NUM 100
 #define WS2812_PIO_USE_PIO1 						// Required for RP2040
 
