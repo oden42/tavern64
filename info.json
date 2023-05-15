@@ -11,16 +11,11 @@
     "processor": "RP2040",
     "bootloader": "rp2040",
     "matrix_pins": {
-        "direct": [
-            [null, null, "GP0"],
-            ["GP1", "GP2", "GP3"],
-            ["GP4", "GP5", "GP6"],
-            ["GP7", "GP8", "GP9"],
-            ["GP10", "GP11", "GP14"]
-        ]
+        "cols": ["GP13", "GP12", "GP11", "GP10", "GP9", "GP8", "GP7", "GP6", "GP5", "GP4", "GP3", "GP2", "GP1", "GP0"],
+        "rows": [ "GP24", "GP23", "GP22", "GP21", "GP0"]
 	},
     "indicators": {
-        "caps_lock": "GP22",
+        "caps_lock": "GP25",
     }
     "layouts": {
         "LAYOUT": {
