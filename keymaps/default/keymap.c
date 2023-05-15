@@ -17,10 +17,10 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	/*
-				┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
-				│ESC  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │  0  │  -  │  =  │ BACKSPACE │ 
-				├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬────────┤
-				│TAB     │  Q  │  W  │  E  │  R  │  T  │  Y  │  U  │  I  │  O  │  P  │  [  │  ]  │BSPC    │
+			┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
+			│ESC  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │  0  │  -  │  =  │ BACKSPACE │ 
+			├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬────────┤
+			│TAB     │  Q  │  W  │  E  │  R  │  T  │  Y  │  U  │  I  │  O  │  P  │  [  │  ]  │BSPC    │
 		┌─────┐	├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
 		│ENC1 │ │CAPS     │  A  │  S  │  D  │  F  │  G  │  H  │  J  │  K  │  L  │  ;  │  '  │ENTER        │
 		├─────┤	├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬─────┬────┘
@@ -30,12 +30,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		└─────┘	└──────┴───────┴──────┴─────────────┴──────┴────────────────┴──────┴─────┴─────┴─────┘
    */
 	  [0] = LAYOUT(
-	  // COL 0,		1,		2,		3,		4,		5,		6,		7,		8,		9,		10,		11,		12,		13		ROW
-		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  ,	// 	0
-		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , //	1
-		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , //	2
-		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , //	3
-		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , 	    KC_Q  , KC_Q  , 	    KC_Q  , KC_Q  , KC_Q  , KC_Q  		    //	4
+	  // COL 0,	1,	2,	3,	4,	5,	6,	7,	8,	9,	10,	11,	12,	13	ROW
+		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  ,	// 0
+		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , // 1
+		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , // 2
+		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , // 3
+		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , 	KC_Q  , KC_Q  , 	KC_Q  , KC_Q  , KC_Q  , KC_Q  		// 4
 	  ),
 	  /*
 	  [1] = LAYOUT(
