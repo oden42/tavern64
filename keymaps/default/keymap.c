@@ -16,21 +16,36 @@ enum custom_keycodes {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
+	/*
+				┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
+				│ESC  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │  0  │  -  │  =  │ BACKSPACE │ 
+				├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬────────┤
+				│TAB     │  Q  │  W  │  E  │  R  │  T  │  Y  │  U  │  I  │  O  │  P  │  [  │  ]  │BSPC    │
+		┌─────┐	├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
+		│ENC1 │ │CAPS     │  A  │  S  │  D  │  F  │  G  │  H  │  J  │  K  │  L  │  ;  │  '  │ENTER        │
+		├─────┤	├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬─────┬────┘
+		│ENC2 │	│LSHFT       │  Z  │  X  │  C  │  V  │  B  │  N  │  M  │  ,  │  .  │  /  │UP   │DEL  │ 
+		├─────┤	├──────┬─────┴─┬───┴──┬──┴─────┴────┬┴─────┼─────┴─────┴────┬┴─────┼─────┼─────┼─────┤
+		│ENC3 │	│LCTRL │L_GUI  │L_ALT │SPC          │FN1   │SPC             │FN2   │LEFT │DOWN │RIGHT│
+		└─────┘	└──────┴───────┴──────┴─────────────┴──────┴────────────────┴──────┴─────┴─────┴─────┘
+   */
 	  [0] = LAYOUT(
-						KC_W,
+	  // COL 0,		1,		2,		3,		4,		5,		6,		7,		8,		9,		10,		11,		12,		13		ROW
+		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  ,	// 	0
+		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , //	1
+		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , //	2
+		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , //	3
+		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , 	    KC_Q  , KC_Q  , 	    KC_Q  , KC_Q  , KC_Q  , KC_Q  		    //	4
+	  ),
+	  /*
+	  [1] = LAYOUT(
+							_______,
 		  QMKSONG1, RGB_TOG, RGB_M_R,
 		  QMKSONG2, RGB_MOD, KC_CAPS,
 		  QMKSONG3, RGB_HUI, RGB_HUD,
 		  QMKSONG4, RGB_VAI, RGB_VAD
 	  ),
-	  [1] = LAYOUT(
-							_______,
-		  CK_TOGG, AU_TOGG, _______,
-		  _______, _______, _______,
-		  _______, _______, _______,
-		  _______, _______, _______
-	  ),
+	  */
 };
 
 

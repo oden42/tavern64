@@ -20,9 +20,9 @@
 
 /* I2C Driver */
 #define OLED_DISPLAY_128X64
-#define I2C_DRIVER I2CD0							// Required for RP2040
-#define I2C0_SDA_PIN GP28 							// Required for RP2040
-#define I2C0_SCL_PIN GP29							// Required for RP2040
+#define I2C_DRIVER I2CD1							// Required for RP2040
+#define I2C1_SDA_PIN GP28 							// Required for RP2040
+#define I2C1_SCL_PIN GP29							// Required for RP2040
 
 
 /* OLED Options */
