@@ -16,26 +16,40 @@ enum custom_keycodes {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	/*
-			┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
-			│ESC  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │  0  │  -  │  =  │ BACKSPACE │ 
-			├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬────────┤
-			│TAB     │  Q  │  W  │  E  │  R  │  T  │  Y  │  U  │  I  │  O  │  P  │  [  │  ]  │BSPC    │
+		/*		===================================    MATRIX LAYOUT    ===================================
+				┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
+				│ 0,0 │ 0,1 │ 0,2 │ 0,3 │ 0,4 │ 0,5 │ 0,6 │ 0,7 │ 0,8 │ 0,9 │0,10 │0,11 │0,12 │ 0,13      │ 
+				├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬────────┤
+				│ 1,0    │ 1,1 │ 1,2 │ 1,3 │ 1,4 │ 1,5 │ 1,6 │ 1,7 │ 1,8 │ 1,9 │1,10 │1,11 │1,12 │ 1,13   │
+		┌─────┐	├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
+		│ 2,0 │ │ 2,1     │ 2,2 │ 2,3 │ 2,4 │ 2,5 │ 2,6 │ 2,7 │ 2,8 │ 2,9 │2,10 │2,11 │2,12 │   2,13      │
+		├─────┤	├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬─────┬────┘
+		│ 3,0 │	│ 3,1        │ 3,2 │ 3,3 │ 3,4 │ 3,5 │ 3,6 │ 3,7 │ 3,8 │ 3,9 │3,10 │3,11 │3,12 │3,13 │ 
+		├─────┤	├──────┬─────┴─┬───┴──┬──┴─────┴────┬┴─────┼─────┴─────┴────┬┴─────┼─────┼─────┼─────┤
+		│ 4,0 │	│ 4,1  │ 4,2   │ 4,3  │ 4,4         │ 4,6  │ 4,7            │ 4,9  │4,10 │4,11 │4,12 │
+		└─────┘	└──────┴───────┴──────┴─────────────┴──────┴────────────────┴──────┴─────┴─────┴─────┘
+				=======================================  ROW , COL  =======================================	*/
+	
+	  [0] = LAYOUT(
+		/*		==================================    DEFAULT LAYOUT    ===================================
+				┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
+				│ESC  │  1  │  2  │  3  │  4  │  5  │  6  │  7  │  8  │  9  │  0  │  -  │  =  │ BACKSPACE │ 
+				├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬────────┤
+				│TAB     │  Q  │  W  │  E  │  R  │  T  │  Y  │  U  │  I  │  O  │  P  │  [  │  ]  │BSPC    │
 		┌─────┐	├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
 		│ENC1 │ │CAPS     │  A  │  S  │  D  │  F  │  G  │  H  │  J  │  K  │  L  │  ;  │  '  │ENTER        │
 		├─────┤	├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬─────┬────┘
 		│ENC2 │	│LSHFT       │  Z  │  X  │  C  │  V  │  B  │  N  │  M  │  ,  │  .  │  /  │UP   │DEL  │ 
 		├─────┤	├──────┬─────┴─┬───┴──┬──┴─────┴────┬┴─────┼─────┴─────┴────┬┴─────┼─────┼─────┼─────┤
 		│ENC3 │	│LCTRL │L_GUI  │L_ALT │SPC          │FN1   │SPC             │FN2   │LEFT │DOWN │RIGHT│
-		└─────┘	└──────┴───────┴──────┴─────────────┴──────┴────────────────┴──────┴─────┴─────┴─────┘
-   */
-	  [0] = LAYOUT(
-	  // COL 0,	1,	2,	3,	4,	5,	6,	7,	8,	9,	10,	11,	12,	13	ROW
-		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  ,	// 0
-		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , // 1
-		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , // 2
-		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , // 3
-		KC_Q  , KC_Q  , KC_Q  , KC_Q  , KC_Q  , 	KC_Q  , KC_Q  , 	KC_Q  , KC_Q  , KC_Q  , KC_Q  		// 4
+		└─────┘	└──────┴───────┴──────┴─────────────┴──────┴────────────────┴──────┴─────┴─────┴─────┘	*/
+				
+	  // 	COL 0,		1,		2,		3,		4,		5,		6,		7,		8,		9,		10,		11,		12,		13		ROW
+			KC_ESC, KC_1  , KC_2  , KC_3  , KC_4  , KC_5  , KC_6  , KC_7  , KC_8  , KC_9  , KC_0  ,KC_MINS, KC_EQL,KC_BSPC,	// 	0
+			KC_TAB, KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  , KC_Y  , KC_U  , KC_I  , KC_O  , KC_P  ,KC_LBRC,KC_RBRC,KC_BSLS, //	1
+			KC_P1 ,KC_CAPS, KC_A  , KC_S  , KC_D  , KC_F  , KC_G  , KC_H  , KC_J  , KC_K  , KC_L  ,KC_SCLN,KC_QUOT, KC_ENT, //	2
+			KC_P2 ,KC_LSFT, KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  , KC_N  , KC_M  ,KC_COMM, KC_DOT,KC_SLSH, KC_UP , KC_DEL, //	3
+			KC_P3 ,KC_LCTL,KC_LGUI,KC_LALT, KC_SPC, 	    KC_SPC, KC_SPC, 	    KC_P4 ,KC_LEFT,KC_DOWN,KC_RGHT 		    //	4
 	  ),
 	  /*
 	  [1] = LAYOUT(
@@ -94,16 +108,16 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
 }
 #endif
 
-/*
+
 #ifdef ENCODER_MAP_ENABLE
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][1] = {
-    [_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [_WASD] = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
-    [_ARRW] = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
-    [_RGB]  = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][3] = {
+    [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU),	ENCODER_CCW_CW(KC_VOLD, KC_VOLU),	ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    // [_WASD] = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
+    // [_ARRW] = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
+    // [_RGB]  = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
 };
 #endif
-*/
+
 
 /*
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
@@ -321,16 +335,16 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 /* OLED SCREEN START */
 
 static const char PROGMEM republic_logo[] = {
-        0x80, 0x81, 0x82, 0x83, 0x84,
-        0xA0, 0xA1, 0xA2, 0xA3, 0xA4,
-        0xC0, 0xC1, 0xC2, 0xC3, 0xC4,
-		0x85, 0x86, 0x87, 0x88, 0x89,
+        0x80, 0x81, 0x82, 0x83, 0x84, 0x00,
+        0xA0, 0xA1, 0xA2, 0xA3, 0xA4, 0x00,
+        0xC0, 0xC1, 0xC2, 0xC3, 0xC4, 0x00,
+		0x85, 0x86, 0x87, 0x88, 0x89, 0x00,
     };
+
 	
 oled_rotation_t oled_init_kb(oled_rotation_t rotation) {
-    return OLED_ROTATION_270;       // flips the display 270 degrees
+    return OLED_ROTATION_180;       // flips the display 180 degrees
 	}
-	
 
 bool oled_task_user(void) {
 	
@@ -343,10 +357,10 @@ bool oled_task_user(void) {
 
     oled_write_P(republic_logo, false);
 	
-	oled_set_cursor(0,4);
-	oled_write_P(PSTR("V.017"), false);
+	oled_set_cursor(0,0);
+	oled_write_P(PSTR("V.006"), false);
 	
-	oled_set_cursor(0,6);
+	oled_set_cursor(0,1);
 	
     // Host Keyboard Layer Status
     // oled_write_P(PSTR("Layer"), false);
@@ -359,17 +373,17 @@ bool oled_task_user(void) {
             oled_write_P(PSTR("WASD\n"), false);
             break;
         case 2:
-            oled_write_P(PSTR(" NAV\n"), false);
+            oled_write_P(PSTR("NAV\n"), false);
             break;
 		case 3:
-			oled_write_P(PSTR(" RGB\n"), false);
+			oled_write_P(PSTR("RGB\n"), false);
 			break;
         default:
             // Or use the write_ln shortcut over adding '\n' to the end of your string
             oled_write_ln_P(PSTR("UNDEF"), false);
     }
 
-	oled_set_cursor(0,8);
+	oled_set_cursor(0,2);
     // Host Keyboard LED Status
     led_t led_state = host_keyboard_led_state();
     oled_write_P(led_state.num_lock ? PSTR(" NUM\n") : PSTR("\n"), false);
@@ -380,7 +394,7 @@ bool oled_task_user(void) {
 	/* wpm counter */
 		uint8_t n = get_current_wpm();
 		char    wpm_str[4];
-		oled_set_cursor(1, 15);
+		oled_set_cursor(0, 4);
 		wpm_str[3] = '\0';
 		wpm_str[2] = '0' + n % 10;
 		wpm_str[1] = '0' + (n /= 10) % 10;
@@ -392,7 +406,7 @@ bool oled_task_user(void) {
 	
 	/* KEYBOARD PET RENDER START */
 
-    render_luna(0, 12);
+    render_luna(6, 6);
 
     /* KEYBOARD PET RENDER END */
     return false;

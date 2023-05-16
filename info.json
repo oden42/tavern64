@@ -18,6 +18,16 @@
     "indicators": {
         "caps_lock": "GP25",
     }
+	"features": {
+		"encoder": true
+	}
+    "encoder": {
+        "rotary": [
+            { "pin_a": "GP15", "pin_b": "GP14", "resolution": 2 }
+            { "pin_a": "GP17", "pin_b": "GP16", "resolution": 4 }
+			{ "pin_a": "GP19", "pin_b": "GP18", "resolution": 6 }
+        ]
+    }
     "layouts": {
         "LAYOUT": {
             "layout": [
