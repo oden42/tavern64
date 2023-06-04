@@ -391,7 +391,7 @@ bool oled_task_user(void) {
     oled_write_P(republic_logo, false);
 	
 	oled_set_cursor(0,0);
-	oled_write_P(PSTR("V.007"), false);
+	oled_write_P(PSTR("V.008"), false);
 	
 	oled_set_cursor(0,1);
 	
