@@ -73,8 +73,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//			
 	// 		COL 0,	1,	2,	3,	4,	5,	6,	7,	8,	9,	10,	11,	12,	13		ROW
 			KC_GRV, KC_F1 , KC_F2 , KC_F3 , KC_F4 , KC_F5 , KC_F6 , KC_F7 , KC_F8 , KC_F9 , KC_F10, KC_F11, KC_F12, KC_DEL,	// 	0
-			MU_NEXT, KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  , KC_Y  , KC_U  , KC_I  , KC_O  , KC_P  ,KC_LBRC,KC_RBRC,KC_BSLS, //	1
-			TO(0) ,KC_CAPS, KC_A  , KC_S  , KC_D  , KC_F  , KC_G  , KC_H  , KC_J  , KC_K  , KC_L  ,KC_SCLN,KC_QUOT, KC_ENT, //	2
+			MU_NEXT, KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  , KC_Y  , KC_U  , KC_I  , KC_O  , KC_P  ,CK_UP,CK_DOWN,CK_TOGG, //	1
+			TO(0) ,KC_CAPS, KC_A  , KC_S  , KC_D  , KC_F  , KC_G  , KC_H  , KC_J  , KC_K  , KC_L  ,KC_SCLN,KC_QUOT,CK_RST, //	2
 			AU_TOGG,KC_LSFT,QMKSONG1,QMKSONG2,QMKSONG3,QMKSONG4,QMKSONG5,QMKSONG6,QMKSONG7,QMKSONG8,QMKSONG9,QMKSONG10, KC_UP , KC_DEL, //	3
 			MU_TOGG,KC_LCTL,KC_LGUI,KC_LALT, KC_SPC, 	KC_SPC, KC_SPC, 	KC_P4 ,KC_LEFT,KC_DOWN,KC_RGHT 		//	4
 	  ),
@@ -98,12 +98,12 @@ float song1[][2] = SONG(PORTAL);
 float song2[][2] = SONG(XMEN_FULL);
 float song3[][2] = SONG(EVERQUEST_FULL);
 float song4[][2] = SONG(MEGALOVANIA);
-float song5[][2] = SONG(WORKMAN_SOUND);
-float song6[][2] = SONG(CHROMATIC_SOUND);
-float song7[][2] = SONG(GUITAR_SOUND);
-float song8[][2] = SONG(VIOLIN_SOUND);
-float song9[][2] = SONG(MAJOR_SOUND);
-float song10[][2] = SONG(MINOR_SOUND);
+float song5[][2] = SONG(IMPERIAL_MARCH);
+float song6[][2] = SONG(COIN_SOUND);
+float song7[][2] = SONG(FF_PRELUDE);
+float song8[][2] = SONG(ZELDA_PUZZLE);
+float song9[][2] = SONG(ONE_UP_SOUND);
+float song10[][2] = SONG(MARIO_MUSHROOM);
 /*
 float song11[][2] = SONG(ODE_TO_JOY);
 float song12[][2] = SONG(ROCK_A_BYE_BABY);

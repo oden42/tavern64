@@ -50,7 +50,9 @@
 #define AUDIO_PWM_DRIVER PWMD5 						// Required for RP2040
 #define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A 		// Required for RP2040
 #define AUDIO_INIT_DELAY
-// #define AUDIO_CLICKY
+// #define AUDIO_ENABLE_TONE_MULTIPLEXING
+// #define AUDIO_TONE_MULTIPLEXING_RATE_DEFAULT 10
+#define AUDIO_CLICKY
 #endif
 
 /* RGB Underglow Settings */
