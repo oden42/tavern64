@@ -45,11 +45,13 @@
 // #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25
 
 /* Audio Options */
+#ifdef AUDIO_ENABLE
 #define AUDIO_PIN GP26
 #define AUDIO_PWM_DRIVER PWMD5 						// Required for RP2040
 #define AUDIO_PWM_CHANNEL RP2040_PWM_CHANNEL_A 		// Required for RP2040
 #define AUDIO_INIT_DELAY
-#define AUDIO_CLICKY
+// #define AUDIO_CLICKY
+#endif
 
 /* RGB Underglow Settings */
 #define RGB_DI_PIN GP27							// MOVE TO JSON
