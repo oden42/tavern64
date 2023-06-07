@@ -173,7 +173,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 
 		/* advanced settings */
 		#    define ANIM_FRAME_DURATION 400  // how long each frame lasts in ms
-		#    define ANIM_SIZE           96   // number of bytes in array. If you change sprites, minimize for adequate firmware size. max is 1024
+		#    define ANIM_SIZE           32   // number of bytes in array. If you change sprites, minimize for adequate firmware size. max is 1024
 
 		/* timers */
 		uint32_t anim_timer = 0;
@@ -647,13 +647,19 @@ bool oled_task_user(void) {
 
     /* KEYBOARD PET VARIABLES END */	
 
-	oled_set_cursor(0,0);
+	/* KEYBOARD PET RENDER START */
+
+    render_luna(0, 1);
+
+    /* KEYBOARD PET RENDER END */
+
+	oled_set_cursor(13,0);
     oled_write_P(republic_logo1, false);
-	oled_set_cursor(0,1);
+	oled_set_cursor(13,1);
 	oled_write_P(republic_logo2, false);
-	oled_set_cursor(0,2);
+	oled_set_cursor(13,2);
 	oled_write_P(republic_logo3, false);
-	oled_set_cursor(0,3);
+	oled_set_cursor(13,3);
 	oled_write_P(republic_logo4, false);
 	
 	oled_set_cursor(6,0);
@@ -702,11 +708,6 @@ bool oled_task_user(void) {
 		oled_set_cursor(0, 6);
 		oled_write("wpm", false);
 	
-	/* KEYBOARD PET RENDER START */
-
-    render_luna(13, 1);
-
-    /* KEYBOARD PET RENDER END */
     return false;
 }
 
