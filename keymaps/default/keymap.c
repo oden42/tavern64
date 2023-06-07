@@ -653,13 +653,13 @@ bool oled_task_user(void) {
 
     /* KEYBOARD PET RENDER END */
 
-	oled_set_cursor(13,0);
+	oled_set_cursor(16,0);
     oled_write_P(republic_logo1, false);
-	oled_set_cursor(13,1);
+	oled_set_cursor(16,1);
 	oled_write_P(republic_logo2, false);
-	oled_set_cursor(13,2);
+	oled_set_cursor(16,2);
 	oled_write_P(republic_logo3, false);
-	oled_set_cursor(13,3);
+	oled_set_cursor(16,3);
 	oled_write_P(republic_logo4, false);
 	
 	oled_set_cursor(6,0);
@@ -671,16 +671,16 @@ bool oled_task_user(void) {
 
     switch (get_highest_layer(layer_state)) {
         case 0:
-            oled_write_P(PSTR("BASE\n"), false);
+            oled_write_P(PSTR("BASE"), false);
             break;
         case 1:
-            oled_write_P(PSTR("ONE\n"), false);
+            oled_write_P(PSTR("ONE"), false);
             break;
         case 2:
-            oled_write_P(PSTR("TWO\n"), false);
+            oled_write_P(PSTR("TWO"), false);
             break;
 		case 3:
-			oled_write_P(PSTR("THREE\n"), false);
+			oled_write_P(PSTR("THREE"), false);
 			break;
         default:
             // Or use the write_ln shortcut over adding '\n' to the end of your string
