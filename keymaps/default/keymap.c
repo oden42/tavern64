@@ -188,6 +188,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 		bool isSneaking = false;
 		bool isJumping  = false;
 		bool showedJump = true;
+		int jumpOffset = 0;
 
 		/* logic */
 		static void render_luna(int LUNA_X, int LUNA_Y) {
@@ -545,7 +546,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 					oled_write("     ", false);
 
 					oled_set_cursor(LUNA_X, LUNA_Y - 1);
-
+					jumpOffset = -1;
 					showedJump = true;
 				} else {
 					/* clear */
@@ -553,6 +554,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 					oled_write("     ", false);
 
 					oled_set_cursor(LUNA_X, LUNA_Y);
+					jumpOffset = 0;
 				}
 
 				/* switch frame */
@@ -561,41 +563,41 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 				/* current status */
 				if (led_usb_state.caps_lock) {
 					oled_write_raw_P(bark1[current_frame], ANIM_SIZE);
-					oled_set_cursor(LUNA_X, LUNA_Y + 1);
+					oled_set_cursor(LUNA_X, LUNA_Y + 1 + jumpOffset);
 					oled_write_raw_P(bark2[current_frame], ANIM_SIZE);
-					oled_set_cursor(LUNA_X, LUNA_Y + 2);
+					oled_set_cursor(LUNA_X, LUNA_Y + 2 + jumpOffset);
 					oled_write_raw_P(bark3[current_frame], ANIM_SIZE);
 					oled_set_cursor(LUNA_X, LUNA_Y);
 
 				} else if (isSneaking) {
 					oled_write_raw_P(sneak1[current_frame], ANIM_SIZE);
-					oled_set_cursor(LUNA_X, LUNA_Y + 1);
+					oled_set_cursor(LUNA_X, LUNA_Y + 1 + jumpOffset);
 					oled_write_raw_P(sneak2[current_frame], ANIM_SIZE);
-					oled_set_cursor(LUNA_X, LUNA_Y + 2);
+					oled_set_cursor(LUNA_X, LUNA_Y + 2 + jumpOffset);
 					oled_write_raw_P(sneak3[current_frame], ANIM_SIZE);
 					oled_set_cursor(LUNA_X, LUNA_Y);
 
 				} else if (current_wpm <= MIN_WALK_SPEED) {
 					oled_write_raw_P(sit1[current_frame], ANIM_SIZE);
-					oled_set_cursor(LUNA_X, LUNA_Y + 1);
+					oled_set_cursor(LUNA_X, LUNA_Y + 1 + jumpOffset);
 					oled_write_raw_P(sit2[current_frame], ANIM_SIZE);
-					oled_set_cursor(LUNA_X, LUNA_Y + 2);
+					oled_set_cursor(LUNA_X, LUNA_Y + 2 + jumpOffset);
 					oled_write_raw_P(sit3[current_frame], ANIM_SIZE);
 					oled_set_cursor(LUNA_X, LUNA_Y);
 										
 				} else if (current_wpm <= MIN_RUN_SPEED) {
 					oled_write_raw_P(walk1[current_frame], ANIM_SIZE);
-					oled_set_cursor(LUNA_X, LUNA_Y + 1);
+					oled_set_cursor(LUNA_X, LUNA_Y + 1 + jumpOffset);
 					oled_write_raw_P(walk2[current_frame], ANIM_SIZE);
-					oled_set_cursor(LUNA_X, LUNA_Y + 2);
+					oled_set_cursor(LUNA_X, LUNA_Y + 2 + jumpOffset);
 					oled_write_raw_P(walk3[current_frame], ANIM_SIZE);
 					oled_set_cursor(LUNA_X, LUNA_Y);
 
 				} else {
 					oled_write_raw_P(run1[current_frame], ANIM_SIZE);
-					oled_set_cursor(LUNA_X, LUNA_Y + 1);
+					oled_set_cursor(LUNA_X, LUNA_Y + 1 + jumpOffset);
 					oled_write_raw_P(run2[current_frame], ANIM_SIZE);
-					oled_set_cursor(LUNA_X, LUNA_Y + 2);
+					oled_set_cursor(LUNA_X, LUNA_Y + 2 + jumpOffset);
 					oled_write_raw_P(run3[current_frame], ANIM_SIZE);
 					oled_set_cursor(LUNA_X, LUNA_Y);
 				}
