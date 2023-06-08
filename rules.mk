@@ -18,6 +18,8 @@ WS2812_DRIVER = vendor		# Required for RP2040
 OLED_ENABLE = yes
 OLED_DRIVER = SSD1306
 WPM_ENABLE = yes
+WPM_SAMPLE_SECONDS = 10
+WPM_SAMPLE_PERIODS = 100
 # Project specific files
 # SRC += lib/ssd1306_sh1106.c
 # QUANTUM_LIB_SRC += spi_master.c
