@@ -28,7 +28,8 @@
 /* OLED Options */
 #ifdef OLED_ENABLE
 	#define OLED_FONT_H "keyboards/colsonkb/tavern64/lib/tavern64font.c"
-	#define OLED_TIMEOUT 120000
+	#define OLED_TIMEOUT 300000			// 5 minute timeout
+	// #define OLED_TIMEOUT 120000			// 2 minute timeout
 	#define OLED_UPDATE_INTERVAL 50
 #endif
 
