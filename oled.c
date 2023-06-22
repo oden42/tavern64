@@ -301,16 +301,31 @@ bool oled_task_user(void) {
 
     switch (get_highest_layer(layer_state)) {
         case 0:
-            oled_write_P(PSTR("BASE "), false);
+            oled_write_P(PSTR("BASE    "), false);
             break;
         case 1:
-            oled_write_P(PSTR("ONE  "), false);
+            oled_write_P(PSTR("FUNCTION"), false);
             break;
         case 2:
-            oled_write_P(PSTR("TWO  "), false);
+            oled_write_P(PSTR("WORK    "), false);
             break;
 		case 3:
-			oled_write_P(PSTR("THREE"), false);
+			oled_write_P(PSTR("GAME FPS"), false);
+			break;
+		case 4:
+			oled_write_P(PSTR("GAME RPG"), false);
+			break;
+		case 5:
+			oled_write_P(PSTR("CREATIVE"), false);
+			break;
+		case 6:
+			oled_write_P(PSTR("LIGHTING"), false);
+			break;
+		case 7:
+			oled_write_P(PSTR("MUSIC   "), false);
+			break;
+		case 8:
+			oled_write_P(PSTR("SONGS   "), false);
 			break;
         default:
             // Or use the write_ln shortcut over adding '\n' to the end of your string
