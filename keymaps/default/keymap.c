@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	    QK_GESC, KC_1  , KC_2  , KC_3  , KC_4  , KC_5  , KC_6  , KC_7  , KC_8  , KC_9  , KC_0  ,KC_MINS, KC_EQL,KC_BSPC,	// 	0
 	    KC_TAB, KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  , KC_Y  , KC_U  , KC_I  , KC_O  , KC_P  ,KC_LBRC,KC_RBRC,KC_BSLS, //	1
 	    TO(1) ,KC_CAPS, KC_A  , KC_S  , KC_D  , KC_F  , KC_G  , KC_H  , KC_J  , KC_K  , KC_L  ,KC_SCLN,KC_QUOT, KC_ENT, //	2
-	    KC_P2 ,KC_LSFT, KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  , KC_N  , KC_M  ,KC_COMM, KC_DOT,KC_SLSH, KC_UP , KC_DEL, //	3
+	    KC_P2 ,KC_LSFT, KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  , KC_N  , KC_M  ,KC_COMM, KC_DOT,KC_SLSH, KC_UP ,KC_RSFT, //	3
 	    KC_P3 ,KC_LCTL,KC_LGUI,KC_LALT, KC_SPC, 	KC_SPC, KC_SPC, 	MO(1) ,KC_LEFT,KC_DOWN,KC_RGHT 		//	4
 	  ),
 
@@ -221,7 +221,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//  Can include shortcuts to NextGen, Calculator
 
 
-
+float caps_on[][2] = SONG(CAPS_LOCK_ON_SOUND);
+float caps_off[][2] = SONG(CAPS_LOCK_OFF_SOUND);
+float num_on[][2] = SONG(NUM_LOCK_ON_SOUND);
+float num_off[][2] = SONG(NUM_LOCK_OFF_SOUND);
 float song1[][2] = SONG(PORTAL);
 float song2[][2] = SONG(XMEN_FULL);
 float song3[][2] = SONG(EVERQUEST_FULL);
@@ -279,7 +282,6 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 };
 #endif
 
-
 /*
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 	keyevent_t event = record->event;
@@ -291,7 +293,14 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
 }
 */
 
+/* ENABLES SHIFT + BACKSPACE TO DELETE */
+const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
+// This globally defines all key overrides to be used
+const key_override_t **key_overrides = (const key_override_t *[]){
+    &delete_key_override,
+    NULL // Null terminate the array of overrides!
+};
 
 void matrix_init_user(void) {
 }
@@ -382,6 +391,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 				break;
 		}
 	return true;
+}
+
+bool led_update_user(led_t led_state) {
+    #ifdef AUDIO_ENABLE
+    static uint8_t caps_state = 0;
+	static uint8_t num_state = 0;
+    if (caps_state != led_state.caps_lock) {
+        led_state.caps_lock ? PLAY_SONG(caps_on) : PLAY_SONG(caps_off);
+		writePin(GP24, led_state.caps_lock);
+        caps_state = led_state.caps_lock;
+    }
+	if (num_state != led_state.num_lock) {
+        led_state.num_lock ? PLAY_SONG(num_on) : PLAY_SONG(num_off);
+		//writePin(GP25, !led_state.caps_lock);
+        num_state = led_state.num_lock;
+    }
+    #endif
+    return true;
+}
+
+bool led_update_kb(led_t led_state) {
+    bool res = led_update_user(led_state);
+    if(res) {
+        // Inverts LED indicator behavior for Num lock so it is off when Num lock is on
+		writePin(GP25, !led_state.num_lock);
+		//writePin(GP24, led_state.num_lock);
+    }
+    return res;
 }
 
 void led_set_user(uint8_t usb_led) {
