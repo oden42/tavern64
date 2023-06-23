@@ -45,6 +45,9 @@
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
 // #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25
 
+/* Tap Dance Options */
+#define TAPPING_TERM 175
+
 /* Audio Options */
 #ifdef AUDIO_ENABLE
 #define AUDIO_PIN GP26
@@ -54,6 +57,8 @@
 // #define AUDIO_ENABLE_TONE_MULTIPLEXING
 // #define AUDIO_TONE_MULTIPLEXING_RATE_DEFAULT 10
 #define AUDIO_CLICKY
+#define AUDIO_VOICES
+#define STARTUP_SONG SONG(PORTAL)
 #endif
 
 /* RGB Underglow Settings */

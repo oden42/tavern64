@@ -293,7 +293,7 @@ bool oled_task_user(void) {
 	oled_write_P(republic_logo4, false);
 	
 	oled_set_cursor(6,0);
-	oled_write_P(PSTR("V.012"), false);
+	oled_write_P(PSTR("V.013"), false);
 	
 	oled_set_cursor(6,1);
     // Host Keyboard Layer Status
@@ -304,28 +304,28 @@ bool oled_task_user(void) {
             oled_write_P(PSTR("BASE    "), false);
             break;
         case 1:
-            oled_write_P(PSTR("FUNCTION"), false);
-            break;
-        case 2:
             oled_write_P(PSTR("WORK    "), false);
             break;
-		case 3:
+        case 2:
 			oled_write_P(PSTR("GAME FPS"), false);
-			break;
-		case 4:
+            break;
+		case 3:
 			oled_write_P(PSTR("GAME RPG"), false);
 			break;
-		case 5:
+		case 4:
 			oled_write_P(PSTR("CREATIVE"), false);
 			break;
-		case 6:
+		case 5:
 			oled_write_P(PSTR("LIGHTING"), false);
+			break;
+		case 6:
+			oled_write_P(PSTR("AUDIO   "), false);
 			break;
 		case 7:
 			oled_write_P(PSTR("MUSIC   "), false);
 			break;
 		case 8:
-			oled_write_P(PSTR("SONGS   "), false);
+            oled_write_P(PSTR("FUNCTION"), false);
 			break;
         default:
             // Or use the write_ln shortcut over adding '\n' to the end of your string
