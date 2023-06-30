@@ -372,3 +372,49 @@
   Q__NOTE(_FS6), BD_NOTE(_DS6), Q__NOTE(_CS6), Q__NOTE(_B5), W__NOTE(_CS6), BD_NOTE(_FS5), \
   Q__NOTE(_B5), Q__NOTE(_AS5), BD_NOTE(_GS5), Q__NOTE(_B5), Q__NOTE(_AS5), BD_NOTE(_GS5),
 
+//  WORK IN PROGRESS
+// https://www.hooktheory.com/theorytab/view/nintendo/the-legend-of-zelda-fairy-theme
+#define ZELDA_FAIRY \
+	Q__NOTE(_A6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+	Q__NOTE(_G6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+	Q__NOTE(_FS6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+	Q__NOTE(_G6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+		Q__NOTE(_G6), Q__NOTE(_C5), Q__NOTE(_A5), Q__NOTE(_F5), \
+		Q__NOTE(_F6), Q__NOTE(_C5), Q__NOTE(_A5), Q__NOTE(_F5), \
+		Q__NOTE(_E6), Q__NOTE(_C5), Q__NOTE(_A5), Q__NOTE(_F5), \
+		Q__NOTE(_F6), Q__NOTE(_C5), Q__NOTE(_A5), Q__NOTE(_F5), \
+	Q__NOTE(_F6), Q__NOTE(_AS5), Q__NOTE(_G5), Q__NOTE(_E5), \
+	Q__NOTE(_E6), Q__NOTE(_AS5), Q__NOTE(_G5), Q__NOTE(_E5), \
+	Q__NOTE(_DS6), Q__NOTE(_AS5), Q__NOTE(_G5), Q__NOTE(_E5), \
+	Q__NOTE(_E6), Q__NOTE(_AS5), Q__NOTE(_G5), Q__NOTE(_E5), \
+		Q__NOTE(_E6), Q__NOTE(_A5), Q__NOTE(_F5), Q__NOTE(_CS5), \
+		Q__NOTE(_D5), Q__NOTE(_A5), Q__NOTE(_F5), Q__NOTE(_CS5), \
+		Q__NOTE(_CS5), Q__NOTE(_A5), Q__NOTE(_F5), Q__NOTE(_CS5), \
+		Q__NOTE(_D5), Q__NOTE(_A5), Q__NOTE(_F5), Q__NOTE(_CS5), \
+	Q__NOTE(_A6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+	Q__NOTE(_G6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+	Q__NOTE(_FS6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+	Q__NOTE(_G6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+		Q__NOTE(_AS6), Q__NOTE(_DS5), Q__NOTE(_C5), Q__NOTE(_A5), \
+		Q__NOTE(_A6), Q__NOTE(_DS5), Q__NOTE(_C5), Q__NOTE(_A5), \
+		Q__NOTE(_GS6), Q__NOTE(_DS5), Q__NOTE(_C5), Q__NOTE(_A5), \
+		Q__NOTE(_A6), Q__NOTE(_DS5), Q__NOTE(_C5), Q__NOTE(_A5), \
+	Q__NOTE(_C6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+	Q__NOTE(_AS6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+	Q__NOTE(_A6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+	Q__NOTE(_AS6), Q__NOTE(_D5), Q__NOTE(_AS5), Q__NOTE(_G5), \
+		Q__NOTE(_A6), Q__NOTE(_AS5), Q__NOTE(_G5), Q__NOTE(_E5), \
+		Q__NOTE(_G6), Q__NOTE(_AS5), Q__NOTE(_G5), Q__NOTE(_E5), \
+		Q__NOTE(_F6), Q__NOTE(_AS5), Q__NOTE(_G5), Q__NOTE(_E5), \
+		Q__NOTE(_E6), Q__NOTE(_AS5), Q__NOTE(_G5), Q__NOTE(_E5), \
+
+//  WORK IN PROGRESS
+// https://www.hooktheory.com/theorytab/view/nintendo/the-legend-of-zelda---overworld-theme
+#define ZELDA_OVERWORLD \
+	H__NOTE(_B5), Q__NOTE(_REST), W__NOTE(_F4), W__NOTE(_REST), Q__NOTE(_B5), Q__NOTE(_B5), Q__NOTE(_C5), Q__NOTE(_D5), Q__NOTE(_E5), \
+	B__NOTE(_F5), Q__NOTE(_REST), QD_NOTE(_F5), Q__NOTE(_F5), Q__NOTE(_FS5), Q__NOTE(_AS5),
+	
+//  WORK IN PROGRESS
+// https://www.hooktheory.com/theorytab/view/the-legend-of-zelda/zeldas-lullaby
+#define ZELDA_LULLABY \
+	Q__NOTE(_C6)
