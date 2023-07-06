@@ -61,7 +61,7 @@ float song9[][2] = SONG(ONE_UP_SOUND);
 float song10[][2] = SONG(MARIO_MUSHROOM);
 float song11[][2] = SONG(TERRAS_THEME);
 float song12[][2] = SONG(RICK_ROLL);
-float song13[][2] = SONG(ALL_STAR);
+float song13[][2] = SONG(KIRBY_DREAM);
 float song14[][2] = SONG(OLD_SPICE);
 float song15[][2] = SONG(DISNEY_SONG);
 
@@ -500,7 +500,7 @@ bool led_update_user(led_t led_state) {
         caps_state = led_state.caps_lock;
     }
 	if (num_state != led_state.num_lock) {
-        led_state.num_lock ? PLAY_SONG(num_on) : PLAY_SONG(num_off);
+        //led_state.num_lock ? PLAY_SONG(num_on) : PLAY_SONG(num_off);
 		//writePin(GP25, !led_state.caps_lock);
         num_state = led_state.num_lock;
     }
