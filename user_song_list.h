@@ -408,6 +408,19 @@
 		Q__NOTE(_F6), Q__NOTE(_AS5), Q__NOTE(_G5), Q__NOTE(_E5), \
 		Q__NOTE(_E6), Q__NOTE(_AS5), Q__NOTE(_G5), Q__NOTE(_E5), \
 
+//  WORK IN PROGRESS - Mostly done
+#define KIRBY_DREAM \
+	M__NOTE(_G5, 40), M__NOTE(_G5, 15), M__NOTE(_C6, 160), \
+	M__NOTE(_C6, 40), M__NOTE(_E6, 15), M__NOTE(_G6, 30), M__NOTE(_C7, 30), \
+	M__NOTE(_B6, 40), M__NOTE(_A6, 15), M__NOTE(_G6, 60), M__NOTE(_E6, 45), M__NOTE(_G6, 15), M__NOTE(_F6, 60), \
+	M__NOTE(_D6, 40), M__NOTE(_E6, 15), M__NOTE(_D6, 60), M__NOTE(_E6, 40),  M__NOTE(_D6, 15), M__NOTE(_C6, 160), \
+	M__NOTE(_G5, 40), M__NOTE(_G5, 15), M__NOTE(_C6, 160), \
+	M__NOTE(_C6, 40), M__NOTE(_E6, 15), M__NOTE(_G6, 30), M__NOTE(_C7, 30), \
+	M__NOTE(_B6, 40), M__NOTE(_A6, 15), M__NOTE(_G6, 60), M__NOTE(_E6, 45), M__NOTE(_G6, 15), M__NOTE(_F6, 60), \
+	M__NOTE(_D6, 40), M__NOTE(_E6, 15), M__NOTE(_D6, 60), M__NOTE(_E6, 40),  M__NOTE(_D6, 15), M__NOTE(_C6, 160), \
+	M__NOTE(_REST, 5), M__NOTE(_C6, 40), M__NOTE(_C6, 15), M__NOTE(_D6, 30), M__NOTE(_E6, 60), \
+	M__NOTE(_C6, 30), M__NOTE(_D6, 30), M__NOTE(_C6, 30),
+	
 //  WORK IN PROGRESS
 // https://www.hooktheory.com/theorytab/view/nintendo/the-legend-of-zelda---overworld-theme
 #define ZELDA_OVERWORLD \
@@ -419,15 +432,3 @@
 #define ZELDA_LULLABY \
 	Q__NOTE(_C6)
 	
-//  WORK IN PROGRESS - Mostly done
-#define KIRBY_DREAM \
-M__NOTE(_G5, 40), M__NOTE(_G5, 15), M__NOTE(_C6, 160), \
-M__NOTE(_C6, 40), M__NOTE(_E6, 15), M__NOTE(_G6, 30), M__NOTE(_C7, 30), \
-M__NOTE(_B6, 40), M__NOTE(_A6, 15), M__NOTE(_G6, 60), M__NOTE(_E6, 45), M__NOTE(_G6, 15), M__NOTE(_F6, 60), \
-M__NOTE(_D6, 40), M__NOTE(_E6, 15), M__NOTE(_D6, 60), M__NOTE(_E6, 40),  M__NOTE(_D6, 15), M__NOTE(_C6, 160), \
-M__NOTE(_G5, 40), M__NOTE(_G5, 15), M__NOTE(_C6, 160), \
-M__NOTE(_C6, 40), M__NOTE(_E6, 15), M__NOTE(_G6, 30), M__NOTE(_C7, 30), \
-M__NOTE(_B6, 40), M__NOTE(_A6, 15), M__NOTE(_G6, 60), M__NOTE(_E6, 45), M__NOTE(_G6, 15), M__NOTE(_F6, 60), \
-M__NOTE(_D6, 40), M__NOTE(_E6, 15), M__NOTE(_D6, 60), M__NOTE(_E6, 40),  M__NOTE(_D6, 15), M__NOTE(_C6, 160), \
-M__NOTE(_REST, 5), M__NOTE(_C6, 40), M__NOTE(_C6, 15), M__NOTE(_D6, 30), M__NOTE(_E6, 60), \
-M__NOTE(_C6, 30), M__NOTE(_D6, 30), M__NOTE(_C6, 30), \
