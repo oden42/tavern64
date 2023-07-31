@@ -265,21 +265,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	 ------- ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬───────────┐
 	 ------- │  ▼  │ F1  │ F2  │ F3  │ F4  │ F5  │ F6  │ F7  │ F8  │ F9  │ F10 │ F11 │ F12 │  ▼        │ 
 	 ------- ├─────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬────────┤
-	 ------- │  ▼     │ F13 │ F14 │ F15 │ F16 │ F17 │ F18 │ F19 │ F20 │ F21 │ F22 │ F23 │ F24 │  ▼     │
+	 ------- │  ▼     │ F13 │ F14 │ F15 │ F16 │ F17 │ F18 │ F19 │ F20 │ F21 │ F22 │ F23 │ F24 │  CALC  │
 	 ┌─────┐ ├────────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴┬────┴────────┤
 	 │BOOT │ │  ▼      │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼          │
 	 ├─────┤ ├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬─────┬────┘
-	 │  ▼  │ │  ▼         │TO 0 │TO 2 │TO 3 │TO 4 │TO 5 │TO 6 │TO 7 │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │ 
+	 │  ▼  │ │  ▼         │TO 0 │TO 2 │TO 3 │TO 4 │TO 5 │TO 6 │TO 7 │  ▼  │  ▼  │PSCR │PG UP│ INS │ 
 	 ├─────┤ ├──────┬─────┴─┬───┴──┬──┴─────┴────┬┴─────┼─────┴─────┴────┬┴─────┼─────┼─────┼─────┤
-	 │  ▼  │ │  ▼   │  ▼    │  ▼   │  ▼          │  ▼   │  ▼             │  ▼   │  ▼  │  ▼  │  ▼  │
+	 │  ▼  │ │  ▼   │  ▼    │  ▼   │  ▼          │  ▼   │  ▼             │  ▼   │HOME │PG DN│ END │
 	 └─────┘ └──────┴───────┴──────┴─────────────┴──────┴────────────────┴──────┴─────┴─────┴─────┘
 */
 	//  COL 0,	1,	2,	3,	4,	5,	6,	7,	8,	9,	10,	11,	12,	13		ROW
 	    KC_TRNS, KC_F1, KC_F2 , KC_F3 , KC_F4 , KC_F5 , KC_F6 , KC_F7 , KC_F8 , KC_F9 , KC_F10, KC_F11, KC_F12,KC_TRNS,	// 	0
-	    KC_TRNS, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24,KC_TRNS, //	1
+	    KC_TRNS, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24,KC_CALC, //	1
 	    QK_BOOT,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS, //	2
-	    KC_TRNS,KC_TRNS,TO(_BASE),TO(_WORK),TO(_GAMING1),TO(_GAMING2),TO(_CREATIVE),TO(_LIGHTING),TO(_AUDIO),KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS, //	3
-	    KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS 						//	4
+	    KC_TRNS,KC_TRNS,TO(_BASE),TO(_WORK),TO(_GAMING1),TO(_GAMING2),TO(_CREATIVE),TO(_LIGHTING),TO(_AUDIO),KC_TRNS,KC_TRNS,KC_PSCR,KC_PGUP,KC_INS, //	3
+	    KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_HOME,KC_PGDN,KC_END 						//	4
 	  )
 };
 	  
