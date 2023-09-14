@@ -340,7 +340,7 @@ bool oled_task_user(void) {
 	/* wpm counter */
 		uint8_t n = get_current_wpm();
 		char    wpm_str[4];
-		oled_set_cursor(0, 15);
+		oled_set_cursor(1, 15);
 		wpm_str[3] = '\0';
 		wpm_str[2] = '0' + n % 10;
 		wpm_str[1] = '0' + (n /= 10) % 10;
