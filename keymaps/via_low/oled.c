@@ -277,25 +277,19 @@ bool oled_task_user(void) {
 
     /* KEYBOARD PET VARIABLES END */	
 
-	/* KEYBOARD PET RENDER START */
-
-    render_luna(0, 1);
-
-    /* KEYBOARD PET RENDER END */
-
-	oled_set_cursor(0,6);
+	oled_set_cursor(0,0);
     oled_write_P(republic_logo1, false);
-	oled_set_cursor(0,7);
+	oled_set_cursor(0,1);
 	oled_write_P(republic_logo2, false);
-	oled_set_cursor(0,8);
+	oled_set_cursor(0,2);
 	oled_write_P(republic_logo3, false);
-	oled_set_cursor(0,9);
+	oled_set_cursor(0,3);
 	oled_write_P(republic_logo4, false);
 	
-	oled_set_cursor(0,10);
-	oled_write_P(PSTR("V.013"), false);
+	oled_set_cursor(0,5);
+	oled_write_P(PSTR("V.015"), false);
 	
-	oled_set_cursor(0,11);
+	oled_set_cursor(0,7);
     // Host Keyboard Layer Status
     // oled_write_P(PSTR("Layer"), false);
 
@@ -338,12 +332,15 @@ bool oled_task_user(void) {
     // oled_write_P(led_state.num_lock ? PSTR("NUM\n") : PSTR("\n"), false);
     // oled_write_P(led_state.caps_lock ? PSTR("CAP\n") : PSTR("\n"), false);
     // oled_write_P(led_state.scroll_lock ? PSTR(" SCR\n") : PSTR("\n"), false);
-		
+	
+	/* KEYBOARD PET RENDER START */
+    render_luna(0, 11);
+    /* KEYBOARD PET RENDER END */	
     
 	/* wpm counter */
 		uint8_t n = get_current_wpm();
 		char    wpm_str[4];
-		oled_set_cursor(0, 12);
+		oled_set_cursor(0, 15);
 		wpm_str[3] = '\0';
 		wpm_str[2] = '0' + n % 10;
 		wpm_str[1] = '0' + (n /= 10) % 10;

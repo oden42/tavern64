@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H
 #include "oled.c"
-#include "features/mouse_turbo_click.h"
 
 enum layer_names {
     _BASE,
@@ -30,22 +29,8 @@ enum custom_keycodes {
     QS_12,
     QS_13,
     QS_14,
-    QS_15,
-	TURBO,
+    QS_15
 };
-
-// Tap Dance declarations
-// enum {
-// 	TD_CK_ENC = 0,
-//	TD_FN = 0
-// };
-
-// Tap Dance definitions
-// qk_tap_dance_action_t tap_dance_actions[] = {
-	// Tap once for Escape, twice for Caps Lock
-	//[TD_CK_ENC] = ACTION_TAP_DANCE_DOUBLE(CK_TOGG, CK_RST),
-	//[TD_FN] = ACTION_TAP_DANCE_DOUBLE(MO(_FN),TO(_BASE)),
-// };
 
 float caps_on[][2] = SONG(CAPS_LOCK_ON_SOUND);
 float caps_off[][2] = SONG(CAPS_LOCK_OFF_SOUND);
@@ -140,7 +125,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	 ┌─────┐ ├─────────┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬──┴──┬─────┬────┘
 	 │  ▼  │ │  ▼         │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │  ▼  │ 
 	 ├─────┤ ├──────┬─────┴─┬───┴──┬──┴─────┴────┬┴─────┼─────┴─────┴────┬┴─────┼─────┼─────┼─────┤
-	 │  ▼  │ │  ▼   │  ▼    │  ▼   │  ▼          │  ▼   │  TURBO         │  ▼   │  ▼  │  ▼  │  ▼  │
+	 │  ▼  │ │  ▼   │  ▼    │  ▼   │  ▼          │  ▼   │  ▼             │  ▼   │  ▼  │  ▼  │  ▼  │
 	 └─────┘ └──────┴───────┴──────┴─────────────┴──────┴────────────────┴──────┴─────┴─────┴─────┘
 */
 	//  COL 0,	1,	2,	3,	4,	5,	6,	7,	8,	9,	10,	11,	12,	13		ROW
@@ -148,7 +133,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	    KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS, //	1
 	    KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS, //	2
 	    KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS, //	3
-	    KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,TURBO,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS 	 					//	4
+	    KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS 	 					//	4
 	  ),
 	  [_GAMING2] = LAYOUT(
 /*
@@ -369,8 +354,6 @@ void matrix_scan_user(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-		
-		if (!process_mouse_turbo_click(keycode, record, TURBO)) { return false; }
 		
 	           /* KEYBOARD PET STATUS */
 		switch (keycode) {
