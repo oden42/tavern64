@@ -43,7 +43,7 @@
 | Resistor B | 220R | 1 |  |
 | Volume Switch | SP3T / 1P3T Switch, 6mm | 1 |  |
 | Pin Headers |  | 40 |  |
-| Microcontroller | RP2040 Pro Micro (purple) | 1 |  |
+| Microcontroller | RP2040 Pi Pico (purple) | 1 |  |
 | Buzzer | 8530 Passive | 1 |  |
 | Encoder | EC11 | 3 |  |
 | Large LED | 5mm LED | 1 |  |
