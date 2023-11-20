@@ -13,8 +13,8 @@
 
 - [Instructions](#instructions)
 	- [Jumpers](#b1)
-		1. [Solder JP1](#c1)
-		2. [Solder JP2](#c2)
+	1. [Solder JP1](#c1)
+	2. [Solder JP2](#c2)
 	- [Switches](#b2)
  
 		3. [Hot swap sockets](#c3)
