@@ -191,6 +191,7 @@ Each switch has three components to them. The LEDs are optional, but the sockets
 	
 <a id="c4"></a>	
 4. **Diodes** (1N4148)
+
     I recommend pre-bending all of the diodes prior to installation. Make sure they are in the correct orientation! Put a few in at a time, then bend the legs so they hold themselves in place. Use flush cut trimmers to avoid leaving sharp points. Save some of the cut off legs to use as pins for the MCU.
     
 <a id="c5"></a>	
