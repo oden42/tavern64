@@ -148,20 +148,9 @@ The first step is to bridge the pads on JP1 and JP2 according to your preference
 
 <a id="c2"></a>    
 2. **Solder JP2 - LED strip**
-    
-    [https://www.notion.so](https://www.notion.so)
-    
     - **Option A** - No bridge = No LED strip installed. (With or without per-key LEDs.)
-    
-    [https://www.notion.so](https://www.notion.so)
-    
     - **Option B** - Indicator + center = LED strip *with* per-key LEDs installed.
-    
-    [https://www.notion.so](https://www.notion.so)
-    
     - **Option C** - Non-indicator + center = LED strip *without* per-key LEDs installed.
-    
-    [https://www.notion.so](https://www.notion.so)
     
 <a id="b2"></a>
 ## Switches
@@ -192,12 +181,12 @@ Each switch has three components to them. The LEDs are optional, but the sockets
 <a id="c4"></a>	
 4. **Diodes** (1N4148)
 
-    I recommend pre-bending all of the diodes prior to installation. Make sure they are in the correct orientation! Put a few in at a time, then bend the legs so they hold themselves in place. Use flush cut trimmers to avoid leaving sharp points. Save some of the cut off legs to use as pins for the MCU.
+I recommend pre-bending all of the diodes prior to installation. Make sure they are in the correct orientation! Put a few in at a time, then bend the legs so they hold themselves in place. Use flush cut trimmers to avoid leaving sharp points. Save some of the cut off legs to use as pins for the MCU.
     
 <a id="c5"></a>	
 5. **Per-Key LEDs** (SK6812 mini-e)
 
-    Use some tweezers to help place the LEDs and make sure it is oriented correctly. The notched leg should match the notched pad.
+Use some tweezers to help place the LEDs and make sure it is oriented correctly. The notched leg should match the notched pad.
     
 <a id="b3"></a>
 ## Microcontroller
@@ -209,14 +198,12 @@ If you have a breadboard, you can use it to align the pin headers and solder the
 <a id="c6"></a>
 6. **Solder the pin headers onto the PCB.**
     
-    Make sure these are straight or they won’t align with the pins on the MCU.
-    
-    [https://www.notion.so](https://www.notion.so)
+Make sure these are straight or they won’t align with the pins on the MCU.
 
 <a id="c7"></a>    
 7. **Solder the pins onto the MCU.**
     
-    Use the legs that were clipped off from the diodes earlier as pins for the MCU.
+Use the legs that were clipped off from the diodes earlier as pins for the MCU.
     
     [https://www.notion.so](https://www.notion.so)
     
@@ -258,12 +245,7 @@ Be mindful of the spacing of the screen from the board, as it will affect how yo
 <a id="c11"></a>
 11. **Solder the OLED screen** (choose one)
     1. **0.96” 128x64 display** - top left
-        
-        [https://www.notion.so](https://www.notion.so)
-        
     2. **0.91” 128x32 display** - bottom right
-        
-        [https://www.notion.so](https://www.notion.so)
         
 <a id="b6"></a>
 ## Other Features
