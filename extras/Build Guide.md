@@ -10,8 +10,8 @@
 	- [Buzzer/Speaker](#a6)
 	- [Power](#a7)
 	- [Customization!](#a8)
- - 
--[Instructions](#instructions)
+
+- [Instructions](#instructions)
 	- [Jumpers](#b1)
 		1. [Solder JP1](#c1)
 		2. [Solder JP2](#c2)
