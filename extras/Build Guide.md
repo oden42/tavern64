@@ -186,25 +186,17 @@ Each switch has three components to them. The LEDs are optional, but the sockets
 
 <a id="c3"></a>
 3. **Hot swap sockets**
-    
-    [https://www.notion.so](https://www.notion.so)
-    
     - Top option = MX sockets (normal)
     - Bottom option = Choc V2 sockets (low profile)
 	
 <a id="c4"></a>	
 4. **Diodes** (1N4148)
-    
     I recommend pre-bending all of the diodes prior to installation. Make sure they are in the correct orientation! Put a few in at a time, then bend the legs so they hold themselves in place. Use flush cut trimmers to avoid leaving sharp points. Save some of the cut off legs to use as pins for the MCU.
-    
-    [https://www.notion.so](https://www.notion.so)
     
 <a id="c5"></a>	
 5. **Per-Key LEDs** (SK6812 mini-e)
-    
+
     Use some tweezers to help place the LEDs and make sure it is oriented correctly. The notched leg should match the notched pad.
-    
-    [https://www.notion.so](https://www.notion.so)
     
 <a id="b3"></a>
 ## Microcontroller
