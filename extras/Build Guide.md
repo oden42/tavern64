@@ -1,7 +1,7 @@
 # Build Guide
 
 **Contents**
-[Before you build](#before-you-build)
+- [Before you build](#before-you-build)
 	- [Profile type](#a1)
 	- [Lighting](#a2)
 	- [Encoders & Macro buttons](#a3)
