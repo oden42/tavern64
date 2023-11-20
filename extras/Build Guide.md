@@ -43,7 +43,7 @@ If you already know what you’re building, [skip to the instructions here](#ins
 <a id="a1"></a>
 ## Profile type
 
-	***Do you want a normal or low profile keyboard?***
+***Do you want a normal or low profile keyboard?***
 
 The Tavern64 PCB is designed for two different profile types; MX and low profiles (Choc V2). This will affect the overall thickness of the assembled keyboard, and can determine which side of the PCB to mount the RP2040 microcontroller.
 
@@ -52,7 +52,7 @@ The Tavern64 PCB is designed for two different profile types; MX and low profile
 <a id="a2"></a>
 ## Lighting
 
-	***How do you want your keyboard to light up?***
+***How do you want your keyboard to light up?***
 
 There are several components to lighting the Tavern64 and all are optional. You will need to bridge the pads on JP2 depending on your lighting choices.
 
@@ -68,7 +68,7 @@ There are several components to lighting the Tavern64 and all are optional. You 
 <a id="a3"></a>
 ## Encoders & Macro buttons
 
-	***Do you want any knobs and/or extra buttons?***
+***Do you want any knobs and/or extra buttons?***
 
 Up to 3 keys can be installed as rotary encoder knobs or as key switches. The availability for one of the keys (KEY #) depends on your placement of the microcontroller. If the MCU is mounted on the back of the board, all 3 keys are available for use.
 
@@ -77,7 +77,7 @@ Up to 3 keys can be installed as rotary encoder knobs or as key switches. The av
 <a id="a4"></a>
 ## Space bar
 
-	***Do you want a normal space bar or split space bar?***
+***Do you want a normal space bar or split space bar?***
 
 The Tavern64 supports a “full” 6.25u space bar or a split bar with several key size options. Here are the recommended options for a split bar:
 
@@ -89,14 +89,14 @@ The Tavern64 supports a “full” 6.25u space bar or a split bar with several k
 <a id="a5"></a>
 ## OLED display
 
-	***What kind of visual display do you want, if any?***
+***What kind of visual display do you want, if any?***
 
 One of two different sized OLED displays can be installed. Both are optional. The top left corner supports a **0.96in 128x64px** display, and the bottom right corner supports a **0.91in 128x32px** display. It doesn’t matter what color display you have, as long as it has 4 pins. Be mindful of how you mount the OLED to the board, as it may affect how it fits in your case.
 
 <a id="a6"></a>
 ## Buzzer/Speaker
 
-	***Do you want a keyboard that can play 8-bit sounds?***
+***Do you want a keyboard that can play 8-bit sounds?***
 
 The speaker is completely optional but can give the Tavern64 a little more character. There is also an option for a volume slider switch along with 2 resistors which control the volume level. Resistors with different ratings can be installed for different volume levels. I recommend 100R and 220R.
 
