@@ -1,7 +1,7 @@
 # Build Guide
 
 **Contents**
-- [Before you build](#before-you-build)
+[Before you build](#before-you-build)
 	- [Profile type](#a1)
 	- [Lighting](#a2)
 	- [Encoders & Macro buttons](#a3)
@@ -10,13 +10,12 @@
 	- [Buzzer/Speaker](#a6)
 	- [Power](#a7)
 	- [Customization!](#a8)
-
-- [Instructions](#instructions)
-	- [Jumpers](#b1)
-	1. [Solder JP1](#c1)
-	2. [Solder JP2](#c2)
-	- [Switches](#b2)
  
+[Instructions](#instructions)
+- [Jumpers](#b1)
+1. [Solder JP1](#c1)
+2. [Solder JP2](#c2)
+	- [Switches](#b2)
 		3. [Hot swap sockets](#c3)
 		4. [Diodes](#c4)
 		5. [Per-Key LEDs](#c5)
