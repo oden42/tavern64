@@ -8,8 +8,9 @@
 	- [Space bar](#a4)
 	- [OLED display](#a5)
 	- [Buzzer/Speaker](#a6)
-	- [Power](#a7)	
-	- [Customization!](#a8)		
+	- [Power](#a7)
+	- [Customization!](#a8)
+ - 
 -[Instructions](#instructions)
 	- [Jumpers](#b1)
 		1. [Solder JP1](#c1)
