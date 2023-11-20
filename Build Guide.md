@@ -1,13 +1,17 @@
 # Build Guide
 
 **Contents**
+- [Before you build](#before-you-build)
+	- [Profile type](#profile-type)
 
+<a id="before-you-build"></a>
 # Before you build
 
 Before you begin building your Tavern64, you’ll need to choose which components to implement. The board was designed to support a variety of features, several of which are optional.
 
-If you already know what you’re building, [skip to the instructions here](https://www.notion.so/Build-Guide-9cdf6bbfc1584549b0e2cd662baf9673?pvs=21).
+If you already know what you’re building, [skip to the instructions here](#instructions).
 
+<a id="profile-type"></a>
 ## Profile type
 
 ***Do you want a normal or low profile keyboard?***
@@ -80,6 +84,7 @@ You’ll need to decide how to customize the rest of your board, including:
 3. Case
 4. Stabilizers
 
+<a id="instructions"></a>
 # Instructions
 
 ## Jumpers
