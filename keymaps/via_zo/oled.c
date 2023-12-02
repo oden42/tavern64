@@ -2,6 +2,7 @@
 
 #ifdef OLED_ENABLE
 
+
 /* KEYBOARD PET START */
 
 		/* settings */
@@ -250,6 +251,35 @@
 
 /* KEYBOARD PET END */
 
+// Set coordinates for visualizer to show
+
+#define MATRIX_DISPLAY_X 100
+#define MATRIX_DISPLAY_Y 50
+
+// Function to draw pixels when keys are pressed. Call this in oled_task_user
+
+static void print_matrix(void){
+	for (uint8_t x = 0; x < MATRIX_ROWS; x++) {
+		for (uint8_t y = 0; y < MATRIX_COLS; y++) {
+			if (x >= 5){
+				oled_write_pixel(MATRIX_DISPLAY_X - y + 14, MATRIX_DISPLAY_Y + x - 3,(matrix_get_row(x) & (1 << y))> 0);
+			}
+			else{
+				oled_write_pixel(MATRIX_DISPLAY_X + y + 2, MATRIX_DISPLAY_Y + x + 2,(matrix_get_row(x) & (1 << y))> 0);
+			}
+		}
+	}
+
+// This creates the box around the drawn pixels
+
+	for (uint8_t x = 0; x < 18; x++) {
+		oled_write_pixel(MATRIX_DISPLAY_X + x, MATRIX_DISPLAY_Y - 2,true); oled_write_pixel(MATRIX_DISPLAY_X + x, MATRIX_DISPLAY_Y + 9,true);
+	}
+	for (uint8_t y = 0; y < 9; y++) {
+		oled_write_pixel(MATRIX_DISPLAY_X - 1, MATRIX_DISPLAY_Y + y - 1, true); oled_write_pixel(MATRIX_DISPLAY_X + 18, MATRIX_DISPLAY_Y + y - 1, true);
+	}
+}
+
 // Start Splash Screen
 static uint32_t oled_splash_timer = 0;
 static bool clear_splash = true;
@@ -314,7 +344,7 @@ static void render_oled(void) {
 	oled_write_raw_P(logo3, sizeof(logo3));
 	
 	oled_set_cursor(16,3);
-	oled_write_P(PSTR("V.03"), false);
+	oled_write_P(PSTR("V.04"), false);
 	
 	oled_set_cursor(7,3);
     // Host Keyboard Layer Status
@@ -373,6 +403,9 @@ static void render_oled(void) {
 
 		oled_set_cursor(0, 6);
 		oled_write("wpm", false);
+		
+		oled_set_cursor(8, 4);
+		print_matrix();
 }
 
 #ifndef SHOW_SPLASH
