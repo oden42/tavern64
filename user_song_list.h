@@ -64,6 +64,23 @@
 	WD_NOTE(_BF5), Q__NOTE(_A5), Q__NOTE(_G5), W__NOTE(_A5),  W__NOTE(_F5), \
 	WD_NOTE(_A5), Q__NOTE(_BF5), Q__NOTE(_A5), B__NOTE(_G5),
 
+// Path of the Wind - My Neighbor Totoro
+#define TOTORO \
+    HD_NOTE(_C4), HD_NOTE(_DS4), HD_NOTE(_F4), HD_NOTE(_REST), \
+    HD_NOTE(_F4), HD_NOTE(_G4), HD_NOTE(_DS4), HD_NOTE(_REST), \
+    HD_NOTE(_C4), HD_NOTE(_DS4), HD_NOTE(_F4), HD_NOTE(_REST), \
+    HD_NOTE(_F4), HD_NOTE(_AS4), HD_NOTE(_G4), HD_NOTE(_REST), \
+    HD_NOTE(_G4), HD_NOTE(_AS4), HD_NOTE(_C5), HD_NOTE(_C5), HD_NOTE(_C5), \
+    HD_NOTE(_DS5), HD_NOTE(_D5), HD_NOTE(_C5), HD_NOTE(_AS4), HD_NOTE(_GS4), HD_NOTE(_G4), HD_NOTE(_REST),\
+    HD_NOTE(_F4), HD_NOTE(_C4), HD_NOTE(_G4), HD_NOTE(_REST), \
+    HD_NOTE(_C4), HD_NOTE(_DS4), HD_NOTE(_F4), HD_NOTE(_REST), \
+    HD_NOTE(_F4), HD_NOTE(_G4), HD_NOTE(_DS4), HD_NOTE(_REST), \
+    HD_NOTE(_C4), HD_NOTE(_DS4), HD_NOTE(_F4), HD_NOTE(_REST), \
+    HD_NOTE(_F4), HD_NOTE(_AS4), HD_NOTE(_G4), HD_NOTE(_REST), \
+    HD_NOTE(_G4), HD_NOTE(_AS4), HD_NOTE(_C5), HD_NOTE(_C5), HD_NOTE(_C5), \
+    HD_NOTE(_DS5), HD_NOTE(_D5), HD_NOTE(_C5), HD_NOTE(_G4), HD_NOTE(_C4), \
+    W__NOTE(_DS4),
+
 // Needs some work, but OK
 #define IMPERIAL_MARCH \
   HD_NOTE(_A4),  S__NOTE(_REST),HD_NOTE(_A4), S__NOTE(_REST), HD_NOTE(_A4), QD_NOTE(_F4), QD_NOTE(_C5), \

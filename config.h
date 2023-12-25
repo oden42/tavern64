@@ -30,23 +30,8 @@
 	#define OLED_FONT_H "keyboards/colsonkb/tavern64/lib/tavern64font.c"
 	#define OLED_TIMEOUT 300000			// 5 minute timeout
 	// #define OLED_TIMEOUT 120000			// 2 minute timeout
-	#define OLED_UPDATE_INTERVAL 10
+	#define OLED_UPDATE_INTERVAL 15
 #endif
-
-
-/* SPI Driver */
-// #define SPI_DRIVER SPID0
-// #define SPI_SLK_PIN GP18
-// #define SPI_MISO_PIN GP20
-// #define SPI_MOSI_PIN GP19
-
-/* Double tap the side button to enter bootloader */
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
-// #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25
-
-/* Tap Dance Options */
-#define TAPPING_TERM 175
 
 /* Audio Options */
 #ifdef AUDIO_ENABLE
@@ -60,6 +45,14 @@
 #define AUDIO_VOICES
 #define STARTUP_SONG SONG(PORTAL)
 #endif
+
+/* Tap Dance Options */
+#define TAPPING_TERM 175
+
+/* Double tap the side button to enter bootloader */
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 500U
+// #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP25
 
 /* RGB Underglow Settings */
 #define RGB_DI_PIN GP27
