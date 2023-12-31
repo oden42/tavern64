@@ -81,6 +81,15 @@
     HD_NOTE(_DS5), HD_NOTE(_D5), HD_NOTE(_C5), HD_NOTE(_G4), HD_NOTE(_C4), \
     W__NOTE(_DS4),
 
+// Short and could be better
+// #define DANGERZONE
+//    W__NOTE(_G5), W__NOTE(_F5), W__NOTE(_E5), W__NOTE(_C5), H__NOTE(_D5), QD_NOTE(_D5), W__NOTE(_D5), 
+
+// Custom timing
+#define DANGERZONE \
+    M__NOTE(_G5, 70), M__NOTE(_F5, 70), M__NOTE(_E5, 70), M__NOTE(_C5, 70), \
+    M__NOTE(_D5, 35), M__NOTE(_D5, 20), M__NOTE(_D5, 50),     
+
 // Needs some work, but OK
 #define IMPERIAL_MARCH \
   HD_NOTE(_A4),  S__NOTE(_REST),HD_NOTE(_A4), S__NOTE(_REST), HD_NOTE(_A4), QD_NOTE(_F4), QD_NOTE(_C5), \
