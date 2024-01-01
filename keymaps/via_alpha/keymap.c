@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "oled.c"
+#include "tavern64\oled_64.c"
 
 enum layer_names {
     _DEFAULT,
@@ -272,7 +272,8 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 };
 #endif
 
-
+// Rotate the screen
+oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
 
 /*
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
@@ -534,7 +535,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         //rgblight_setrgb (0x7A,  0x00, 0xFF);
         break;
 	case 5:
-		writePin(GP23, 0);
+		//writePin(GP23, 0);
         //rgblight_setrgb (0x7A,  0x00, 0xFF);
         break;
     default: //  for any other layers, or the default layer

@@ -24,12 +24,15 @@
 #define I2C1_SDA_PIN GP28 							// Required for RP2040
 #define I2C1_SCL_PIN GP29							// Required for RP2040
 
+/* Layer Count for Via */
+#define DYNAMIC_KEYMAP_LAYER_COUNT 6
 
 /* OLED Options */
 #ifdef OLED_ENABLE
-	#define OLED_FONT_H "keyboards/colsonkb/tavern64/lib/tavern64font.c"
-	#define OLED_TIMEOUT 60000			// 5 minute timeout is 300000
-	// #define OLED_TIMEOUT 120000			// 2 minute timeout
+	#define OLED_FONT_H "keyboards/colsonkb/tavern64/lib/tavern_font.h"
+	#define OLED_FONT_5X5				// Set font type
+	#define OLED_TIMEOUT 300000			// 5 minute timeout
+	// #define OLED_TIMEOUT 120000		// 2 minute timeout
 	#define OLED_UPDATE_INTERVAL 15
 #endif
 
