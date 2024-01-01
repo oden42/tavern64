@@ -9,7 +9,7 @@ int   current_wpm = 0;						// Current wpm status variable
 led_t led_usb_state;						// USB state status variable
 static uint32_t oled_splash_timer = 0;		// Splash Screen
 static bool clear_splash = true;			// Splash Screen
-static uint8_t oled_brightness_val = 255;	// Splash Screen
+static bool oled_dim = false;				// Splash Screen
 bool isCtrl = false;						// For animations
 
 // Splash Screen
@@ -270,15 +270,24 @@ void render_rgb_hsv(uint8_t col, uint8_t line) {
 #endif
 }
 
-// //Adjust brightness
-// static void oled_brightness_up(int amount){
-// 	if((oled_get_brightness() + amount) > 255){
-// 		oled_brightness_val = 255;
-// 	}
-// 	else{
-// 		oled_brightness_val = oled_brightness_val + amount;
-// 	}
-// }
+// Toggle OLED brightness
+static void oled_brightness_toggle(void){
+	if(oled_dim){
+		oled_dim = false;
+		oled_set_brightness(255);
+	}
+	else{
+		oled_dim = true;
+		oled_set_brightness(10);
+	}
+
+	// if((oled_get_brightness_toggle() + amount) > 255){
+	// 	oled_brightness_val = 255;
+	// }
+	// else{
+	// 	oled_brightness_val = oled_brightness_val + amount;
+	// }
+}
 
 // static void oled_brightness_down(int amount){
 // 	if(amount > oled_get_brightness()){
@@ -304,10 +313,6 @@ static void render_oled(void) {
 			oled_on();
 		}
 	#endif
-
-	if(oled_brightness_val != oled_get_brightness()){
-		oled_set_brightness(oled_brightness_val);
-	}
 
 	render_tavern_logo(8,0);
 
