@@ -4,19 +4,108 @@
 
 #ifdef OLED_ENABLE
 
+// Defines for displaying each song name. Must match what is set in the keymap.c
+#define SONG1_NAME "Portal Chime"
+#define SONG2_NAME "X-Men Theme"
+#define SONG3_NAME "Everquest Theme"
+#define SONG4_NAME "Megalovania"
+#define SONG5_NAME "Imperial March"
+#define SONG6_NAME "Mario Coin"
+#define SONG7_NAME "FF Prelude"
+#define SONG8_NAME "Zelda Puzzle"
+#define SONG9_NAME "Mario 1up"
+#define SONG10_NAME "Mario Mushroom"
+#define SONG11_NAME "Terras Theme"
+#define SONG12_NAME "Rick Roll"
+#define SONG13_NAME "Kirby Greens"
+#define SONG14_NAME "Old Spice"
+#define SONG15_NAME "Disney Song"
+#define SONG16_NAME "Totoro"
+#define SONG17_NAME "Danger Zone"
+#define SONG18_NAME "Sonic Ring"
+#define SONG19_NAME "Zelda Treasure"
+#define SONG20_NAME "Mario Theme"
+#define SONG21_NAME "Mario Game Over"
+#define SONG22_NAME "E1M1 Doom"
+#define SONG23_NAME "Campanella"
+#define SONG24_NAME "Zelda Fairy WIP"
 
 int   current_wpm = 0;						// Current wpm status variable
 led_t led_usb_state;						// USB state status variable
 static uint32_t oled_splash_timer = 0;		// Splash Screen
 static bool clear_splash = true;			// Splash Screen
 static bool oled_dim = false;				// Splash Screen
+static int splash_phrase = 0;				// Splash Screen Phrase
+static bool clear_phrase = true;			// Splash Screen Phrase
 bool isCtrl = false;						// For animations
+
+// Splash Screen Phrase
+static void render_phrase(void) {
+	oled_set_cursor(0,5);
+	// Each phrase can be a max of 20 chars per line
+	// This is 20: "                    "
+	switch (splash_phrase) {
+		case 1:
+			oled_write_P(PSTR("      Now with\n"), false);
+			oled_write_P(PSTR("    more pixels!    "), false);
+			break;
+		case 2:
+			oled_write_P(PSTR("          2         "), false);
+			break;
+		case 3:
+			oled_write_P(PSTR("          3         "), false);
+			break;
+		case 4:
+			oled_write_P(PSTR("          4         "), false);
+			break;
+		case 5:
+			oled_write_P(PSTR("          5         "), false);
+			break;
+		case 6:
+			oled_write_P(PSTR("          6         "), false);
+			break;
+		case 7:
+			oled_write_P(PSTR("          7         "), false);
+			break;
+		case 8:
+			oled_write_P(PSTR("          8         "), false);
+			break;
+		case 9:
+			oled_write_P(PSTR("          9         "), false);
+			break;
+		case 10:
+			oled_write_P(PSTR("          10        "), false);
+			break;
+		case 11:
+			oled_write_P(PSTR("          11        "), false);
+			break;
+		case 12:
+			oled_write_P(PSTR("          12        "), false);
+			break;
+		case 13:
+			oled_write_P(PSTR("          13        "), false);
+			break;
+		case 14:
+			oled_write_P(PSTR("          14        "), false);
+			break;
+		case 15:
+			oled_write_P(PSTR("          15        "), false);
+			break;
+		default:
+			oled_write_P(PSTR("Missing Phrase Data!"), false);
+			break;
+	}
+}
 
 // Splash Screen
 static void render_splash(void) {
+
     oled_write_raw_P(splash, sizeof(splash));
-	oled_set_cursor(5,5);
-	oled_write_P(PSTR("Version 0.46"), false);
+	if (clear_phrase) {
+		splash_phrase = random() % 15;
+		clear_phrase = false;
+	}
+	render_phrase();
 }
 
 // Clear Splash Screen
@@ -272,31 +361,116 @@ void render_rgb_hsv(uint8_t col, uint8_t line) {
 
 // Toggle OLED brightness
 static void oled_brightness_toggle(void){
-	if(oled_dim){
+	if (oled_dim){
 		oled_dim = false;
 		oled_set_brightness(255);
-	}
-	else{
+	} else {
 		oled_dim = true;
 		oled_set_brightness(10);
 	}
-
-	// if((oled_get_brightness_toggle() + amount) > 255){
-	// 	oled_brightness_val = 255;
-	// }
-	// else{
-	// 	oled_brightness_val = oled_brightness_val + amount;
-	// }
 }
 
-// static void oled_brightness_down(int amount){
-// 	if(amount > oled_get_brightness()){
-// 		oled_brightness_val = 1;
-// 	}
-// 	else{
-// 		oled_brightness_val = oled_brightness_val - amount;
-// 	}
-// }
+#define SONG_TIMEOUT 2000
+uint32_t song_timer = 0;
+static int song_played = 0;
+static bool song_display = false;
+
+// Display song name at the bottom of the screen for a short period of time
+static void oled_display_song(void){
+	void display_song(void){
+		switch (song_played) {
+			case 1:
+				oled_write_P(PSTR(SONG1_NAME), false);
+				break;
+			case 2:
+				oled_write_P(PSTR(SONG2_NAME), false);
+				break;
+			case 3:
+				oled_write_P(PSTR(SONG3_NAME), false);
+				break;
+			case 4:
+				oled_write_P(PSTR(SONG4_NAME), false);
+				break;
+			case 5:
+				oled_write_P(PSTR(SONG5_NAME), false);
+				break;
+			case 6:
+				oled_write_P(PSTR(SONG6_NAME), false);
+				break;
+			case 7:
+				oled_write_P(PSTR(SONG7_NAME), false);
+				break;
+			case 8:
+				oled_write_P(PSTR(SONG8_NAME), false);
+				break;
+			case 9:
+				oled_write_P(PSTR(SONG9_NAME), false);
+				break;
+			case 10:
+				oled_write_P(PSTR(SONG10_NAME), false);
+				break;
+			case 11:
+				oled_write_P(PSTR(SONG11_NAME), false);
+				break;
+			case 12:
+				oled_write_P(PSTR(SONG12_NAME), false);
+				break;
+			case 13:
+				oled_write_P(PSTR(SONG13_NAME), false);
+				break;
+			case 14:
+				oled_write_P(PSTR(SONG14_NAME), false);
+				break;
+			case 15:
+				oled_write_P(PSTR(SONG15_NAME), false);
+				break;
+			case 16:
+				oled_write_P(PSTR(SONG16_NAME), false);
+				break;
+			case 17:
+				oled_write_P(PSTR(SONG17_NAME), false);
+				break;
+			case 18:
+				oled_write_P(PSTR(SONG18_NAME), false);
+				break;
+			case 19:
+				oled_write_P(PSTR(SONG19_NAME), false);
+				break;
+			case 20:
+				oled_write_P(PSTR(SONG20_NAME), false);
+				break;
+			case 21:
+				oled_write_P(PSTR(SONG21_NAME), false);
+				break;
+			case 22:
+				oled_write_P(PSTR(SONG22_NAME), false);
+				break;
+			case 23:
+				oled_write_P(PSTR(SONG23_NAME), false);
+				break;
+			case 24:
+				oled_write_P(PSTR(SONG24_NAME), false);
+				break;																							
+			default:
+				oled_write_P(PSTR("Unknown"), false);
+				break;
+		}
+	}
+
+	oled_set_cursor(0,7);
+		if (song_display){
+			if (song_timer && timer_expired(timer_read(), song_timer)) {
+				oled_set_cursor(0,7);
+				oled_advance_page(true);
+				song_display = false;
+			} else {
+				oled_set_cursor(0,7);
+				oled_advance_page(true);
+				oled_set_cursor(0,7);
+				display_song();
+			}
+		}
+}
 
 // Render OLED function. Use this instead of oled_task_user
 static void render_oled(void) {
@@ -349,28 +523,41 @@ static void render_oled(void) {
 			render_calcifer(0,0);
 			oled_set_cursor(11,2);
             oled_write_P(PSTR("PRIMARY"), false);
+			// Clear bottom line
+			oled_set_cursor(0,7);
+			oled_advance_page(true);
             break;
         case 1:
 			render_neencat(0,0);
 			oled_set_cursor(11,2);
             oled_write_P(PSTR(" WORK  "), false);
+			// Clear bottom line
+			oled_set_cursor(0,7);
+			oled_advance_page(true);
             break;
         case 2:
 			render_calcifer(0,0);
 			oled_set_cursor(11,2);
             oled_write_P(PSTR(" GAMES "), false);
+			// Clear bottom line
+			oled_set_cursor(0,7);
+			oled_advance_page(true);
             break;
 		case 3:
 			m_anim_type  = 0;
 			render_musicbox(0,0);
 			oled_set_cursor(11,2);
 			oled_write_P(PSTR(" MUSIC "), false);
+			oled_display_song();
 			break;
 		case 4:
 			m_anim_type  = 1;
 			render_musicbox(0,0);
 			oled_set_cursor(11,2);
 			oled_write_P(PSTR(" PIANO "), false);
+			// Clear bottom line
+			oled_set_cursor(0,7);
+			oled_advance_page(true);
 			break;
 		case 5:
 			oled_set_cursor(11,2);
@@ -386,6 +573,9 @@ static void render_oled(void) {
 				oled_advance_page(true);
 			test_info();
 			render_rgb_hsv(9,3);
+			// Clear bottom line
+			oled_set_cursor(0,7);
+			oled_advance_page(true);
 			break;
         default:
             // Or use the write_ln shortcut over adding '\n' to the end of your string

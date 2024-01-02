@@ -44,6 +44,7 @@ float caps_off[][2] = SONG(CAPS_LOCK_OFF_SOUND);
 float num_on[][2] = SONG(NUM_LOCK_ON_SOUND);
 float num_off[][2] = SONG(NUM_LOCK_OFF_SOUND);
 
+// If these are changed, update the song defines in the oled_64.c or oled_32.c file
 float song1[][2] = SONG(PORTAL);
 float song2[][2] = SONG(XMEN_FULL);
 float song3[][2] = SONG(EVERQUEST_FULL);
@@ -274,7 +275,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 #endif
 
 // Rotate the screen
-oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
+// oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
 
 /*
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
@@ -340,149 +341,221 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 				if (record->event.pressed) {
 					// when keycode QS_1 is pressed
 					PLAY_SONG(song1);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 1;
+					song_display = true;
 				}
 				break;
 			case QS_2:
 				if (record->event.pressed) {
 					// when keycode QS_2 is pressed
 					PLAY_SONG(song2);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 2;
+					song_display = true;
 				}
 				break; 
 			case QS_3:
 				if (record->event.pressed) {
 					// when keycode QS_3 is pressed
 					PLAY_SONG(song3);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 3;
+					song_display = true;
 				}
 				break;
 			case QS_4:
 				if (record->event.pressed) {
 					// when keycode QS_4 is pressed
 					PLAY_SONG(song4);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 4;
+					song_display = true;
 				}
 				break;
 			case QS_5:
 				if (record->event.pressed) {
 					// when keycode QS_5 is pressed
 					PLAY_SONG(song5);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 5;
+					song_display = true;
 				}
 				break;
 			case QS_6:
 				if (record->event.pressed) {
 					// when keycode QS_6 is pressed
 					PLAY_SONG(song6);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 6;
+					song_display = true;
 				}
 				break;
 			case QS_7:
 				if (record->event.pressed) {
 					// when keycode QS_7 is pressed
 					PLAY_SONG(song7);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 7;
+					song_display = true;
 				}
 				break;
 			case QS_8:
 				if (record->event.pressed) {
 					// when keycode QS_8 is pressed
 					PLAY_SONG(song8);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 8;
+					song_display = true;
 				}
 				break;
 			case QS_9:
 				if (record->event.pressed) {
 					// when keycode QS_9 is pressed
 					PLAY_SONG(song9);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 9;
+					song_display = true;
 				}
 				break;
 			case QS_10:
 				if (record->event.pressed) {
 					// when keycode QS_10 is pressed
 					PLAY_SONG(song10);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 10;
+					song_display = true;
 				}
 				break;
 			case QS_11:
 				if (record->event.pressed) {
 					// when keycode QS_11 is pressed
 					PLAY_SONG(song11);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 11;
+					song_display = true;
 				}
 				break;
 			case QS_12:
 				if (record->event.pressed) {
 					// when keycode QS_12 is pressed
 					PLAY_SONG(song12);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 12;
+					song_display = true;
 				}
 				break;
 			case QS_13:
 				if (record->event.pressed) {
 					// when keycode QS_13 is pressed
 					PLAY_SONG(song13);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 13;
+					song_display = true;
 				}
 				break;
 			case QS_14:
 				if (record->event.pressed) {
 					// when keycode QS_14 is pressed
 					PLAY_SONG(song14);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 14;
+					song_display = true;
 				}
 				break;
 			case QS_15:
 				if (record->event.pressed) {
 					// when keycode QS_15 is pressed
 					PLAY_SONG(song15);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 15;
+					song_display = true;
 				}
 				break;
 			case QS_16:
 				if (record->event.pressed) {
 					// when keycode QS_16 is pressed
 					PLAY_SONG(song16);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 16;
+					song_display = true;
 				}
 				break;
 			case QS_17:
 				if (record->event.pressed) {
 					// when keycode QS_17 is pressed
 					PLAY_SONG(song17);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 17;
+					song_display = true;
 				}
 				break;
 			case QS_18:
 				if (record->event.pressed) {
 					// when keycode QS_18 is pressed
 					PLAY_SONG(song18);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 18;
+					song_display = true;
 				}
 				break;
 			case QS_19:
 				if (record->event.pressed) {
 					// when keycode QS_19 is pressed
 					PLAY_SONG(song19);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 19;
+					song_display = true;
 				}
 				break;
 			case QS_20:
 				if (record->event.pressed) {
 					// when keycode QS_20 is pressed
 					PLAY_SONG(song20);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 20;
+					song_display = true;
 				}
 				break;
 			case QS_21:
 				if (record->event.pressed) {
 					// when keycode QS_21 is pressed
 					PLAY_SONG(song21);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 21;
+					song_display = true;
 				}
 				break;
 			case QS_22:
 				if (record->event.pressed) {
 					// when keycode QS_22 is pressed
 					PLAY_SONG(song22);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 22;
+					song_display = true;
 				}
 				break;
 			case QS_23:
 				if (record->event.pressed) {
 					// when keycode QS_23 is pressed
 					PLAY_SONG(song23);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 23;
+					song_display = true;
 				}
 				break;
 			case QS_24:
 				if (record->event.pressed) {
 					// when keycode QS_15 is pressed
 					PLAY_SONG(song24);
+					song_timer = (record->event.time + SONG_TIMEOUT) | 1;
+					song_played = 24;
+					song_display = true;
 				}
 				break;
 			case QS_BL:
 				if (record->event.pressed) {
-					// when keycode QS_15 is pressed
+					// when keycode QS_BL is pressed
 					oled_brightness_toggle();
 				}
 				break;
