@@ -35,77 +35,90 @@ led_t led_usb_state;						// USB state status variable
 static uint32_t oled_splash_timer = 0;		// Splash Screen
 static bool clear_splash = true;			// Splash Screen
 static bool oled_dim = false;				// Splash Screen
-static int splash_phrase = 0;				// Splash Screen Phrase
-static bool clear_phrase = true;			// Splash Screen Phrase
+// static int splash_phrase = 0;				// Splash Screen Phrase
+// static bool clear_phrase = true;			// Splash Screen Phrase
 bool isCtrl = false;						// For animations
 
-// Splash Screen Phrase
-static void render_phrase(void) {
-	oled_set_cursor(0,5);
-	// Each phrase can be a max of 20 chars per line
-	// This is 20: "                    "
-	switch (splash_phrase) {
-		case 1:
-			oled_write_P(PSTR("      Now with\n"), false);
-			oled_write_P(PSTR("    more pixels!    "), false);
-			break;
-		case 2:
-			oled_write_P(PSTR("          2         "), false);
-			break;
-		case 3:
-			oled_write_P(PSTR("          3         "), false);
-			break;
-		case 4:
-			oled_write_P(PSTR("          4         "), false);
-			break;
-		case 5:
-			oled_write_P(PSTR("          5         "), false);
-			break;
-		case 6:
-			oled_write_P(PSTR("          6         "), false);
-			break;
-		case 7:
-			oled_write_P(PSTR("          7         "), false);
-			break;
-		case 8:
-			oled_write_P(PSTR("          8         "), false);
-			break;
-		case 9:
-			oled_write_P(PSTR("          9         "), false);
-			break;
-		case 10:
-			oled_write_P(PSTR("          10        "), false);
-			break;
-		case 11:
-			oled_write_P(PSTR("          11        "), false);
-			break;
-		case 12:
-			oled_write_P(PSTR("          12        "), false);
-			break;
-		case 13:
-			oled_write_P(PSTR("          13        "), false);
-			break;
-		case 14:
-			oled_write_P(PSTR("          14        "), false);
-			break;
-		case 15:
-			oled_write_P(PSTR("          15        "), false);
-			break;
-		default:
-			oled_write_P(PSTR("Missing Phrase Data!"), false);
-			break;
-	}
-}
+// // Splash Screen Phrase
+// static void render_phrase(void) {
+// 	oled_set_cursor(0,5);
+// 	// Each phrase can be a max of 20 chars per line
+// 	// This is 20: "                    "
+// 	switch (splash_phrase) {
+// 		case 1:
+// 			oled_write_P(PSTR("      Now with\n"), false);
+// 			oled_write_P(PSTR("    more pixels!    "), false);
+// 			break;
+// 		case 2:
+// 			oled_write_P(PSTR("       Cheers!      "), false);
+// 			break;
+// 		case 3:
+// 			oled_write_P(PSTR("   Let's Goooooo!   "), false);
+// 			break;
+// 		case 4:
+// 			oled_write_P(PSTR(" Handmade with love\n"), false);
+// 			oled_write_P(PSTR("  by Jacob Thompson "), false);
+// 			break;
+// 		case 5:
+// 			oled_write_P(PSTR("  Now I have a cat! "), false);
+// 			break;
+// 		case 6:
+// 			oled_write_P(PSTR("  I'm a scary and\n"), false);
+// 			oled_write_P(PSTR("powerful fire demon!"), false);
+// 			break;
+// 		case 7:
+// 			oled_write_P(PSTR("    No on else\n"), false);
+// 			oled_write_P(PSTR("   does any work\n"), false);
+// 			oled_write_P(PSTR("    around here.   "), false);
+// 			break;
+// 		case 8:
+// 			oled_write_P(PSTR("   Demons don't\n"), false);
+// 			oled_write_P(PSTR("   make promises.   "), false);
+// 			break;
+// 		case 9:
+// 			oled_write_P(PSTR("     She likes\n"), false);
+// 			oled_write_P(PSTR("     my spark!!     "), false);
+// 			break;
+// 		case 10:
+// 			oled_write_P(PSTR(" Fine, like moving\n"), false);
+// 			oled_write_P(PSTR("  the castle isn't\n"), false);
+// 			oled_write_P(PSTR("    hard enough!    "), false);
+// 			break;
+// 		case 11:
+// 			oled_write_P(PSTR("        Thocc       "), false);
+// 			break;
+// 		case 12:
+// 			oled_write_P(PSTR(" click clack goes "), false);
+// 			break;
+// 		case 13:
+// 			oled_write_P(PSTR("     That's one\n"), false);
+// 			oled_write_P(PSTR(" fucking nice kitty\n"), false);
+// 			oled_write_P(PSTR("    right there.    "), false);
+// 			break;
+// 		case 14:
+// 			oled_write_P(PSTR("      Atodaso.      "), false);
+
+// 			break;
+// 		case 15:
+// 			oled_write_P(PSTR("   Get two birds    "), false);
+// 			oled_write_P(PSTR("   stoned at once   "), false);
+// 			break;
+// 		default:
+// 			oled_write_P(PSTR("Missing Phrase Data!"), false);
+// 			break;
+// 	}
+// }
 
 // Splash Screen
 static void render_splash(void) {
 
     oled_write_raw_P(splash, sizeof(splash));
-	if (clear_phrase) {
-		splash_phrase = random() % 15;
-		clear_phrase = false;
-	}
-	render_phrase();
+	// if (clear_phrase) {
+	// 	splash_phrase = rand() % 15;
+	// 	// splash_phrase = splash_phrase + 1;
+	// 	clear_phrase = false;
+	// } 
+	// render_phrase();
 }
 
 // Clear Splash Screen
@@ -116,6 +129,7 @@ void clear_screen(void) {
           oled_write_raw_byte(0x0, i*OLED_DISPLAY_WIDTH + j);
         }
       }
+	  // clear_phrase = true;
       clear_splash = false;
     }
 }
@@ -510,7 +524,8 @@ static void render_oled(void) {
 	wpm_bar();
 
 	// // TEST INFO
-	// 	oled_set_cursor(0,7);
+	// oled_set_cursor(16,7);
+	// oled_write(get_u16_str(splash_phrase, ' '), false);
 	// 	oled_write_P(PSTR("I: "), false);
 	// 	oled_write(get_u16_str(last_input_activity_elapsed(), ' '), false);
 	// 	oled_set_cursor(12,7);

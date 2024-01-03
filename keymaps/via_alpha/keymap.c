@@ -275,7 +275,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 #endif
 
 // Rotate the screen
-// oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
+oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
 
 /*
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
@@ -318,10 +318,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 				break;
 			case KC_SPC:
 				if (record->event.pressed) {
+					// splash_phrase = random() % 15;
 					// isJumping  = true;
 					// showedJump = false;
 					// oled_set_brightness(255);
-					// oled_brightness_down(25);
+					// oled_brightness_down(25);    
 				} else {
 					// isJumping = false;
 				}

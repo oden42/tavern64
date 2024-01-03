@@ -1,4 +1,3 @@
-#define DYNAMIC_KEYMAP_LAYER_COUNT 9
 #ifdef STARTUP_SONG
 	#undef STARTUP_SONG
 #endif
