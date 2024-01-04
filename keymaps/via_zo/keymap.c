@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "tavern64\oled_64.c"
+#include "oled_64.c"
 
 enum layer_names {
     _DEFAULT,
@@ -214,9 +214,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//  COL 0,	1,	2,	3,	4,	5,	6,	7,	8,	9,	10,	11,	12,	13		ROW
 	    KC_TRNS, KC_F1, KC_F2 , KC_F3 , KC_F4 , KC_F5 , KC_F6 , KC_F7 , KC_F8 , KC_F9 , KC_F10, KC_F11, KC_F12,KC_TRNS,	// 	0
 	    KC_TRNS, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24,KC_CALC, //	1
-	    RGB_TOG,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS, //	2
+	    RGB_MOD,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS, //	2
 	    QS_BL,KC_TRNS,TO(_DEFAULT),TO(_WORK),TO(_GAMING),KC_TRNS,KC_TRNS,KC_TRNS,TO(_MUSIC),KC_TRNS,KC_TRNS,KC_PSCR,KC_PGUP,KC_INS, //	3
-	    QK_BOOT,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_HOME,KC_PGDN,KC_END 						//	4
+	    RGB_TOG,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_TRNS,KC_HOME,KC_PGDN,KC_END 						//	4
 	  )
 };
 	  
@@ -270,12 +270,14 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [_GAMING] =  	{ ENCODER_CCW_CW(KC_VOLD,KC_VOLU),	ENCODER_CCW_CW(KC_NO, KC_NO), 			ENCODER_CCW_CW(C(KC_F22),C(KC_F21)) },
     [_MUSIC] =  	{ ENCODER_CCW_CW(AU_PREV,AU_NEXT),	ENCODER_CCW_CW(MU_NEXT,MU_NEXT), 		ENCODER_CCW_CW(CK_DOWN,CK_UP) },
 	[_PIANO] =  	{ ENCODER_CCW_CW(AU_PREV,AU_NEXT),	ENCODER_CCW_CW(MU_NEXT,MU_NEXT), 		ENCODER_CCW_CW(KC_NO, KC_NO) },
-    [_FN] =  		{ ENCODER_CCW_CW(RGB_RMOD,RGB_MOD),	ENCODER_CCW_CW(RGB_HUD,RGB_HUI), 		ENCODER_CCW_CW(RGB_VAD,RGB_VAI) },
+    [_FN] =  		{ ENCODER_CCW_CW(RGB_HUD,RGB_HUI),	ENCODER_CCW_CW(RGB_SAD,RGB_SAI), 		ENCODER_CCW_CW(RGB_VAD,RGB_VAI) },
 };
 #endif
 
+#ifdef OLED_FLIP_180
 // Rotate the screen
-// oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
+oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
+#endif
 
 /*
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {

@@ -494,6 +494,15 @@ static void render_oled(void) {
 
 	// Code to turn off OLED after the timeout, since animations break the default timeout code
 	#if OLED_TIMEOUT > 0
+		#if OLED_FADE > 0
+			if(!oled_dim){
+				if (last_input_activity_elapsed() > OLED_FADE && last_led_activity_elapsed() > OLED_FADE) {
+						oled_set_brightness(1);
+					} else {
+						oled_set_brightness(255);
+					}
+			}
+		#endif
 	if (last_input_activity_elapsed() > OLED_TIMEOUT && last_led_activity_elapsed() > OLED_TIMEOUT) {
 		oled_off();
 			return;

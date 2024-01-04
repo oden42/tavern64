@@ -31,9 +31,11 @@
 #ifdef OLED_ENABLE
 	#define OLED_FONT_H "keyboards/colsonkb/tavern64/lib/tavern_font.h"
 	#define OLED_FONT_5X5				// Set font type
-	#define OLED_TIMEOUT 300000			// 5 minute timeout
-	// #define OLED_TIMEOUT 120000		// 2 minute timeout
+	#define OLED_FADE 60000				// 1 minute fade time
+	// #define OLED_TIMEOUT 300000		// 5 minute timeout
+	#define OLED_TIMEOUT 120000			// 2 minute timeout
 	#define OLED_UPDATE_INTERVAL 15
+	#define OLED_FLIP_180				// Custom define to flip OLED
 #endif
 
 /* Audio Options */

@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "tavern64\oled_64.c"
+#include "oled_64.c"
 
 enum layer_names {
     _DEFAULT,
@@ -274,8 +274,10 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 };
 #endif
 
+#ifdef OLED_FLIP_180
 // Rotate the screen
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_180; }
+#endif
 
 /*
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
