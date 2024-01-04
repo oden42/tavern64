@@ -13,3 +13,4 @@
 #define T64_ZO
 #ifdef OLED_FLIP_180
 	#undef OLED_FLIP_180
+#endif
