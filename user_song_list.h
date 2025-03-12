@@ -88,7 +88,7 @@
 // Custom timing
 #define DANGERZONE \
     M__NOTE(_G5, 70), M__NOTE(_F5, 70), M__NOTE(_E5, 70), M__NOTE(_C5, 70), \
-    M__NOTE(_D5, 35), M__NOTE(_D5, 20), M__NOTE(_D5, 50),     
+    M__NOTE(_D5, 20), M__NOTE(_REST, 15), M__NOTE(_D5, 10), M__NOTE(_REST, 15), M__NOTE(_D5, 50), 
 
 // Needs some work, but OK
 #define IMPERIAL_MARCH \
